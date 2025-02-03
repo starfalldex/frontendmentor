@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0; 
+    padding: 0;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F5D04E;
+}
+
+.card {
+    background-color: white;
+    width: 540px;
+    margin: 100px auto;
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 0 0px black;
+}
+.card > img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.detail {
+    margin-block: 1.5rem;
+    width: fit-content;
+}
+#type {
+    background-color: #F4CF49;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 0.5rem;
+}
+#name{
+    font-weight: bold;
+    font-weight: bold;
+    font-size: 2rem;
+}
+#description {
+    color: gray;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.profile > img {
+    width: 3rem;
+}
+.profile-name {
+    margin-inline-start: 1rem;
+}
+
+.card:hover {
+    box-shadow: -5px -5px 0 0px black;
+}
+.card:hover  #name{
+    color: #F4CF49;
+}
+
+@media (max-width:540px){
+    .card{
+        width: 90%;
+    }
+}
