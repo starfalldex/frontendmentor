@@ -6,6 +6,7 @@
     padding: 0;
     font-family: "Poppins", Helvetica, sans-serif;
     --brown: hsl(14, 45%, 36%);
+    box-sizing: border-box;
 }
 
 h1,
@@ -20,25 +21,25 @@ body {
 }
 
 .main-section {
-    margin-top: 100px;
     margin-inline: auto;
-    width: 80%;
+    width: 70%;
     background-color: white;
-    border-radius: 2rem;
+    border-radius: 0 0 2rem 2rem;
+    padding-inline: 4rem;
 }
 
 .img-div {
     display: flex;
     justify-content: center;
-    padding-top: 2rem;
 }
 .omelette-img {
-    width: 90%;
-    border-radius: 1rem;
+    width: 100%;
+    border-radius: 0 0 2rem 2rem;
 }
 .gaps {
-    padding: 2rem;
+    padding-block: 2rem;
     color: hsl(30, 10%, 34%);
+    border-bottom: 2px solid rgb(219, 219, 219);
 }
 .gaps h2 {
     color: var(--brown);
@@ -55,8 +56,8 @@ ul {
 
 .nth-child-1 {
     margin-top: 2rem;
-    padding: 0rem;
-    padding-inline: 2rem;
+    padding: 0;
+    border-bottom: transparent;
 }
 .nth-child-1 div p {
     padding-top: 1rem;
@@ -103,23 +104,13 @@ ul {
     width: 50%;
     color: var(--brown);
 }
-@media (max-width: 600px) {
-    body {
-        background-color: red;
-    }
+@media (max-width: 700px) {
     .main-section {
-        margin-top: 0;
         width: 100%;
-        background-color: white;
-        border-radius: 0rem;
-    }
-    .img-div {
-        display: flex;
-        justify-content: center;
-        padding: 0;
+        padding-inline: 2rem;
     }
     .omelette-img {
-        width:100%;
+        width:130%;
         border-radius: 0;
     }
 }
