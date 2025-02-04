@@ -17,6 +17,8 @@ body{
     border: 2px solid black;
     border-radius: 1rem;
     box-shadow: 10px 10px 0 0px black;
+    transition: box-shadow 0.3s ease;
+    transform: scale(0.8);
 }
 .card > img {
     width: 100%;
@@ -56,13 +58,24 @@ body{
 
 .card:hover {
     box-shadow: -5px -5px 0 0px black;
+    transition: box-shadow 0.5s ease;
 }
 .card:hover  #name{
     color: #F4CF49;
 }
 
-@media (max-width:540px){
+@media (max-width:440px){
     .card{
+        margin: 80px auto;
+        padding: 1rem;
         width: 90%;
+        transform: scale(0.8);
+    }
+    .detail {
+        margin-block: 0.5rem;
+    }
+    #type {
+        padding-inline: 0.5rem;
+        padding-block: 0.25rem;
     }
 }
