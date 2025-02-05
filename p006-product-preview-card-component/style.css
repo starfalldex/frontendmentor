@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+body {
+  background-color: #f3eae3;
+}
+.card-component {
+  background-color: #fff;
+  max-width: 600px;
+  display: flex;
+  margin: 100px auto;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+#image {
+  width: 50%;
+  content: url("images/image-product-desktop.jpg");
+}
+.details-wrapper {
+  width: 50%;
+  padding: 2rem;
+  position: relative;
+}
+.details {
+  margin-block: 1rem;
+}
+#type {
+  color: gray;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+#description {
+  color: gray;
+  letter-spacing: 0.4px;
+  line-height: 150%;
+}
+#price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+.font-noto-serif {
+  font-size: 2.5rem;
+  font-family: "Noto Serif Display", Times, serif;
+  font-weight: 700;
+  line-height: 120%;
+}
+#new-price {
+  color: #3d8168;
+}
+#old-price {
+  color: gray;
+  text-decoration: line-through;
+}
+#to-cart {
+  background-color: #3d8168;
+  color: white;
+  width: 100%;
+  max-width: 80%;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  padding-block: 1rem;
+  border-radius: 1rem;
+
+  position: absolute;
+  bottom: 2rem;
+
+  transition: background-color 0.4s ease;
+}
+#to-cart:hover {
+    background-color: #1A4031;
+    transition: background-color 0.4s ease;
+}
+
+@media (min-width: 441px) and (max-width: 640px) {
+  * {
+    font-size: 12px;
+  }
+  .card-component {
+    min-width: 400px;
+    max-width: 90%;
+  }
+  #image {
+    width: 50%;
+  }
+  .details-wrapper {
+    padding: 1rem;
+  }
+  .details {
+    margin-block: 1rem;
+  }
+  #type {
+    letter-spacing: 0.5rem;
+  }
+  #name {
+    line-height: 100%;
+  }
+  #description {
+    line-height: 120%;
+  }
+  #price {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .font-noto-serif {
+    font-size: 2rem;
+  }
+  #to-cart {
+    bottom: 1rem;
+  }
+}
+@media (max-width: 440px) {
+  .card-component {
+    margin: 2rem auto;
+    max-width: 90%;
+    flex-direction: column;
+  }
+  #image {
+    width: 100%;
+    content: url("images/image-product-mobile.jpg");
+  }
+  .details-wrapper {
+    width: 100%;
+  }
+  #type{
+    margin-top: 0;
+  }
+}
