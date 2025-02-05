@@ -104,13 +104,16 @@ body {
   color: gray;
 }
 
-@media (max-width: 400px){
+@media (max-width: 400px) {
   .rating-card {
     width: 90%;
     min-width: 250px;
     max-width: 300px;
     padding: 1rem;
   }
+}
+
+@media (pointer: coarse) {
   .rating:hover {
     animation: removeHover 0.4s forwards;
   }
@@ -118,5 +121,6 @@ body {
     to {
       background-color: var(--clicked-hightlight);
       color: inherit;
-    }}
+    }
+  }
 }
