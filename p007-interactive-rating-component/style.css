@@ -55,6 +55,7 @@ body {
   align-items: center;
   border-radius: var(--size);
   transition: background-color 0.4s ease, transform 0.2s ease;
+  cursor: default;
 }
 .button-submit {
   background-color: var(--clicked-hightlight);
@@ -67,12 +68,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: background-color 0.4s ease;
-}
-.rating:hover,
-.button-submit:hover {
-  background-color: silver;
-  color: #171e26;
-  transition: background-color 0.4s ease;
+  cursor: pointer;
 }
 
 /* by js */
@@ -104,23 +100,20 @@ body {
   color: gray;
 }
 
+@media (min-width: 400px){
+  .rating:hover,
+.button-submit:hover {
+  background-color: silver;
+  color: #171e26;
+  transition: background-color 0.4s ease;
+}
+}
+
 @media (max-width: 400px) {
   .rating-card {
     width: 90%;
     min-width: 250px;
     max-width: 300px;
     padding: 1rem;
-  }
-}
-
-@media (pointer: coarse) {
-  .rating:hover {
-    animation: removeHover 0.4s forwards;
-  }
-  @keyframes removeHover {
-    to {
-      background-color: var(--clicked-hightlight);
-      color: inherit;
-    }
   }
 }
