@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: "Poppins";
+  box-sizing: border-box;
+}
+
+.content-wrapper {
+  padding: 5rem 10rem;
+}
+.content {
+  margin: auto;
+  padding-inline: 10rem;
+  max-width: 1920px;
+}
+.topic {
+  margin-inline: 25%;
+  padding-bottom: 2em;
+  text-align: center;
+}
+.topic h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+.topic h2 {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+.topic p {
+  color: hsl(229, 6%, 66%);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.card-group {
+  display: grid;
+  grid-template-areas:
+    "a b c"
+    "a d c";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  gap: 2rem;
+  align-items: center;
+}
+.sup {
+  grid-area: a;
+}
+.tea {
+  grid-area: b;
+}
+
+.kar {
+  grid-area: d;
+}
+
+.cal {
+  grid-area: c;
+}
+
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 5px 20px 5px hsla(0, 0%, 0%, 0.2);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+}
+
+.height-line {
+  height: 10px;
+}
+.s-line {
+  background-color: hsl(180, 62%, 55%);
+}
+.t-line {
+  background-color: hsl(0, 78%, 62%);
+}
+.k-line {
+  background-color: hsl(34, 97%, 64%);
+}
+.c-line {
+  background-color: hsl(212, 86%, 64%);
+}
+
+.card-content {
+  padding: 2em;
+}
+.card-content .image{
+  padding-block-start: 1rem;
+  text-align: right;
+}
+
+
+@media (max-width: 1536px) {
+  .content {
+    padding-inline: 4rem;
+  }
+  .topic {
+    margin-inline: 15%;
+  }
+}
+
+
+@media (max-width: 1280px) {
+  .content-wrapper {
+    padding: 5rem 5rem;
+  }
+  .content {
+    padding-inline: 0;
+  }
+  .topic {
+    margin-inline: 12%;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .content-wrapper {
+    padding: 5rem 1rem;
+  }
+  .topic {
+    margin-inline: 8%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .content {
+    padding-inline: 0;
+  }
+  .topic {
+    margin-inline: 0;
+  }
+  .topic p{margin-inline: 10%;}
+
+  .card-group {
+    grid-template-areas: "a" " b" "d" "c";
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .card{
+    width: 400px;
+  }
+  
+}
+
+
+@media (max-width: 640px) {
+  .content {
+    padding-inline: 0;
+  }
+  .topic {
+    margin-inline: 0;
+  }
+  .topic h1{font-size: 2rem;}
+  .topic h2{font-size: 2rem;}
+  .card-group {
+    grid-template-areas: "a" " b" "d" "c";
+    grid-template-columns: 1fr;
+  }
+  .card{
+    max-width: 300px;
+  }
+}
