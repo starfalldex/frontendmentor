@@ -1,18 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --clicked-text: whitesmoke;
+  --clicked-hightlight: #fa7715;
+  --back_color: hsl(228, 10%, 8%);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Inter, Arial, Helvetica, sans-serif;
-  font-size: 14px;
   font-weight: 500;
+  color: white;
 }
 body {
-  background-color: #141519;
-  color: white;
-  --clicked-text: whitesmoke;
-  --clicked-hightlight: #fa7715;
+  background-color: var(--back_color);
 }
 .rating-card {
   background-image: linear-gradient(180deg, #222a34, #131920);
@@ -20,6 +23,8 @@ body {
   margin: 100px auto;
   padding: 2rem;
   border-radius: 2rem;
+
+  transition: box-shadow 0.4s ease;
 }
 .star {
   background-color: #272e38;
@@ -29,13 +34,13 @@ body {
   line-height: 0;
 }
 .part {
-  margin-block: 2rem;
+  margin-block: 1.5rem;
 }
 .question {
   font-size: 2rem;
+  line-height: 1;
 }
 .description {
-  font-size: 12px;
   color: gray;
 }
 .rating-wrapper {
@@ -54,7 +59,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: var(--size);
-  transition: background-color 0.4s ease, transform 0.2s ease;
+  transition: background-color 0.4s ease;
   cursor: default;
 }
 .button-submit {
@@ -78,11 +83,16 @@ body {
   color: var(--clicked-text);
   transition: transform 0.4s ease, background-color 0.4s ease;
 }
+
+/* 2nd phase card */
 .visibility-hidden {
   display: none;
 }
 .after-rate-content {
   text-align: center;
+}
+.arc-part {
+  margin-top: 1rem;
 }
 .selected {
   color: var(--clicked-hightlight);
@@ -90,30 +100,29 @@ body {
   justify-content: center;
   gap: 0.4rem;
 }
-.arc-part {
-  margin-block: 1rem;
-}
 .gratitude {
   font-size: 2rem;
 }
-.afterwords {
-  color: gray;
-}
 
-@media (min-width: 400px){
+@media not (hover: none) {
+  .rating-card:hover {
+    box-shadow: 0 0 1rem 0 hsla(0, 0%, 100%, 0.3);
+    transition: box-shadow 0.4s ease;
+  }
   .rating:hover,
-.button-submit:hover {
-  background-color: silver;
-  color: #171e26;
-  transition: background-color 0.4s ease;
-}
+  .button-submit:hover {
+    background-color: silver;
+    color: #171e26;
+    transition: background-color 0.4s ease;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 640px) {
   .rating-card {
-    width: 90%;
-    min-width: 250px;
-    max-width: 300px;
-    padding: 1rem;
+    min-width: 300px;
+    max-width: 90%;
+  }
+  .description {
+    color: gray;
   }
 }
