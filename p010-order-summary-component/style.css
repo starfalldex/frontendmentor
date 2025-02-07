@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+:root {
+  --primary_pale: hsl(225, 100%, 94%);
+  --primary_bright: hsl(245, 75%, 52%);
+  --neurtal_very_pale: hsl(225, 100%, 98%);
+  --neurtal_desaturated: hsl(224, 23%, 55%);
+  --neurtal_dark: hsl(223, 47%, 23%);
+  --hover_state: hsl(245, 100%, 30%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+body {
+  background: url("images/pattern-background-desktop.svg"), var(--primary_pale);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.order-summary-card {
+  background-color: #fff;
+  width: 450px;
+  max-width: 90%;
+  margin: 100px auto;
+
+  border-radius: 2rem;
+  overflow: hidden;
+
+  box-shadow: 0 1rem 1rem 0 #c7cee6;
+}
+.order-summary-card image img {
+  width: 100%;
+}
+.content-zone {
+  padding: 3rem;
+}
+.text-zone {
+  text-align: center;
+}
+.main-text {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.cost-plan-zone {
+  background-color: var(--neurtal_very_pale);
+  margin-block: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+.cost-plan-zone .plan-cost {
+  flex-grow: 2;
+}
+.cost-plan-zone .change {
+  flex-grow: 1;
+  text-align: right;
+  transition: color 0.4s ease;
+  text-decoration: none;
+}
+.cost {
+  color: var(--neurtal_desaturated);
+}
+.payment-zone {
+  text-align: center;
+}
+.proceed,
+.cancel {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.proceed {
+  width: 100%;
+  background-color: var(--primary_bright);
+  padding: 1rem;
+  color: #fff;
+  border-radius: 1rem;
+  transition: background-color 0.4s ease;
+}
+.cancel {
+  margin: 1rem;
+  color: var(--neurtal_desaturated);
+  transition: color 0.4s ease;
+}
+
+@media not (hover: none) {
+  .change:hover {
+    color: var(--hover_state);
+    text-decoration: underline;
+  }
+  .proceed:hover,
+  .cancel:hover {
+    cursor: pointer;
+  }
+  .proceed:hover {
+    background-color: var(--hover_state);
+    transition: background-color 0.4s ease;
+  }
+  .cancel:hover {
+    color: black;
+    text-decoration: underline;
+    transition: color 0.4s ease;
+  }
+}
+@media (max-width: 440px) {
+  .content-zone {
+    padding: 1rem;
+  }
+  .cost-plan-zone {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+}
