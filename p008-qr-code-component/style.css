@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Slate_l: hsl(212, 45%, 89%);
+  --Slate_m: hsl(216, 15%, 48%);
+  --Slate_d: hsl(218, 44%, 22%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+body {
+  background-color: var(--Slate_l);
+}
+
+.qrcode-card {
+  background-color: var(--White);
+  width: 320px;
+  margin: 100px auto;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 1rem 1rem hsla(0, 0%, 0%, 0.05);
+}
+.image {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  line-height: 0;
+}
+.image img {
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+.text-zone {
+  text-align: center;
+}
+.main-text {
+  color: var(--Slate_d);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.description-text {
+  color: var(--Slate_m);
+  margin-bottom: 1rem;
+}
+@media not (hover: none) {
+  .image:hover > img {
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+  }
+}
+@media (max-width: 640px) {
+  .qrcode-card {
+    max-width: 90%;
+  }
+}
