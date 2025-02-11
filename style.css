@@ -1,27 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Inter, Arial, Helvetica, sans-serif;
-  color: black;
+  color: var(--color_text);
   text-decoration: none;
-  --color1: aliceblue;
+  --color1: #e7f4ff;
   --color2: white;
-  --color3: rgb(220, 239, 255);
+  --color3: #d3ebff;
+  --color_text: black;
+  --primary_accent: #3a7db8;
 }
 body {
   background-color: var(--color1);
 }
-h1,
-h2 {
-  font-family: "DM Serif Display", Times, serif;
-  font-weight: 400;
-}
+
 h1 {
+  color: var(--color_text);
+  font-family: 'Noto Serif Display','Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 4rem;
   margin: 2rem;
   text-align: center;
+}
+h2 {
+  color: var(--color_text);
+  font-family: 'Noto Serif','Times New Roman', Times, serif;
+  font-weight: bold;
 }
 .part-wrapper {
   width: 100%;
@@ -47,9 +57,20 @@ h1 {
   margin-bottom: 1rem;
   padding: 0.5rem;
   padding-inline: 1rem;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color2);
+  transition: border 0.4s ease;
+}
+@media not (hover:none) {
+  .project-link:hover {
+    border: 2px solid var(--primary_accent);
+    transition: border 0.4s ease;
+  }
 }
 @media (max-width: 640px) {
+  h1 {
+    font-size: 3rem;
+  }
   .part-wrapper {
     flex-direction: column;
     max-width: 90%;

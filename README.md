@@ -27,11 +27,10 @@ font-family: 'Poppins';
 ### Paragraph Serif Type Face
 
 ```css
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 
-font-family: 'Libre Baskervilles';
+font-family: 'Noto Serif';
 ```
-
 ```css
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap");
 
@@ -39,12 +38,20 @@ font-family: 'DM Serif Text';
 ```
 
 ```css
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 
-font-family: 'Noto Serif';
+font-family: 'Libre Baskervilles';
 ```
 
+
+
 ### Display Serif Type Face
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap");
+
+font-family: 'Noto Serif Display';
+```
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
@@ -52,11 +59,6 @@ font-family: 'Noto Serif';
 font-family: 'DM Serif Display';
 ```
 
-```css
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap");
-
-font-family: 'Noto Serif Display';
-```
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
