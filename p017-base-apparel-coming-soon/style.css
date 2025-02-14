@@ -89,6 +89,7 @@ h1:first-child {
   background-color: transparent;
   border-radius: 2rem;
   opacity: 0.5;
+  text-wrap: wrap;
 }
 input:focus {
   outline: none;
@@ -109,6 +110,7 @@ input:focus {
   right: 0;
   position: absolute;
   transition: scale 0.4s ease, box-shadow 0.6s ease;
+
 }
 .alert-image {
   display: none;
@@ -124,9 +126,7 @@ input:focus {
   padding-block: 1rem;
   color: var(--primary_2);
 }
-.error-msg {
-  display: block;
-}
+
 .image {
   width: 100%;
   grid-area: c;
