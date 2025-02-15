@@ -1,8 +1,5 @@
-@import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --font_display: "Josefin Sans";
@@ -72,8 +69,8 @@ body {
   width: 600px;
   max-width: 90%;
 }
+
 .free-trial-button {
-  border: none;
   background-color: var(--accent_c1);
   width: 100%;
   font-size: 1.4rem;
@@ -118,23 +115,9 @@ body {
 .input-detail:focus {
   outline: 4px solid var(--accent_c1);
 }
-.error-img {
-  aspect-ratio: 1 / 1;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(-100%, -50%);
-  box-shadow: -10px 0 10px 0 white;
-}
-.error-msg {
-  
-  width: 100%;
-  text-align: right;
-  color: var(--primary_c1);
-}
+
 .form-submit {
   background-color: var(--primary_c2);
-  border: none;
   font-size: 1.4rem;
   color: white;
   text-align: center;
@@ -150,10 +133,6 @@ body {
   box-shadow: 0 0 0 0 #217953;
   transition: box-shadow 0.4s ease;
 }
-.error-toggle {
-  display: none;
-}
-
 .terms {
   text-align: center;
 }
@@ -163,7 +142,30 @@ body {
   font-weight: bold;
   text-decoration: underline;
 }
-
+/* error */
+.error-img {
+  display: none;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  box-shadow: -10px 0 10px 0 white;
+}
+.error-msg {
+  display: none;
+  width: 100%;
+  text-align: right;
+  color: var(--primary_c1);
+}
+/* error msg toggle class */
+.error-toggle {
+  display: block;
+}
+/* default property reset */
+.default-property-reset {
+  border: none;
+}
 @media (max-width: 1024px) {
   .heading {
     font-size: 4.5rem;

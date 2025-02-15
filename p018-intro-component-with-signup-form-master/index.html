@@ -21,35 +21,36 @@
       </div>
       <div class="sign-up-zone">
         <div class="sign-up-content-wrapper">
-          <button class="free-trial-button" type="submit">Try it free 7 days then $20/mo. thereafter</button>
-          <div class="form-wrapper">
-
-            <form id="form1" name="form1" class="sign-up-form" novalidate onsubmit="x(event)">
+          <button class="free-trial-button default-property-reset" type="submit">Try it free 7 days then $20/mo. thereafter</button>
+          <div class="form-wrapper" onsubmit="submit_form(event)">
+            <form id="form1" class="sign-up-form" name="form1" novalidate>
               <div class="input-wrapper" tabindex="0">
-                <input class="input-detail" onchange="onch(event)" type="text" name="first_name" placeholder="First Name" />
-                <img class="error-toggle error-img" src="images/icon-error.svg" alt="" />
+                <input class="input-detail default-property-reset" onchange="data_validate(event)" type="text" name="first_name" placeholder="First Name" />
+                <img class="error-img" src="images/icon-error.svg" alt="" />
               </div>
-              <div class="error-toggle error-msg">First Name cannot be empty</div>
-
-              <div class="input-wrapper" tabindex="0">
-                <input class="input-detail" onchange="onch(event)" type="text" name="last_name" placeholder="Last Name" />
-                <img class="error-toggle error-img" src="images/icon-error.svg" alt="" />
-              </div>
-              <div class="error-toggle error-msg">Last Name cannot be empty</div>
+              <div class="error-msg">First Name is empty or have special characters</div>
 
               <div class="input-wrapper" tabindex="0">
-                <input class="input-detail" onchange="onch(event)" type="email" name="email_address " placeholder="Email Address" />
-                <img class="error-toggle error-img" src="images/icon-error.svg" alt="" />
+                <input class="input-detail default-property-reset" onchange="data_validate(event)" type="text" name="last_name" placeholder="Last Name" />
+                <img class="error-img" src="images/icon-error.svg" alt="" />
               </div>
-              <div class="error-toggle error-msg">Looks like this is not an email</div>
+              <div class="error-msg">Last Name is empty or have special characters</div>
 
               <div class="input-wrapper" tabindex="0">
-                <input class="input-detail" onchange="onch(event)" type="password" name="password" placeholder="Password" />
-                <img class="error-toggle error-img" src="images/icon-error.svg" alt="" />
+                <input class="input-detail default-property-reset" onchange="data_validate(event)" type="email" placeholder="Email Address" />
+                <img class="error-img" src="images/icon-error.svg" alt="" />
               </div>
-              <div class="error-toggle error-msg">Password is either incorrect or empty</div>
+              <div class="error-msg">Email is empty or not Valid</div>
 
-              <button class="form-submit" >Claim your free trial</button>
+              <div class="input-wrapper" tabindex="0">
+                <input class="input-detail default-property-reset" onchange="data_validate(event)" type="password" placeholder="Password" />
+                <img class="error-img" src="images/icon-error.svg" alt="" />
+              </div>
+              <div class="error-msg">
+                Password must be 8-30 characters long and must contain least one Uppercase, lowercase, digit, special character( @ # $ % ^ & * ! ) 
+              </div>
+
+              <button class="form-submit default-property-reset" >Claim your free trial</button>
               <div class="terms">By clicking the button, you are agreeing to our <span> Terms and Services </span></div>
             </form>
           </div>

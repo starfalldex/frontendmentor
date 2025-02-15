@@ -1,82 +1,64 @@
-// // const form = document.forms[0];
-// // form.onsubmit = (elm) => {
-// //   console.log(elm);
-// //         elm.preventDefault();
+var is_error = false;
+function data_validate(element) {
+  const data = element.target;
+  const data_value = data.value;
 
-// // };
-
-// function x(event) {
-//   event.preventDefault();
-//   const form = document.querySelector("#form1");
-//   const form_data = new FormData(form);
-//   // if(event.target[0])
-//   // if(event.target[1])
-//   // if(event.target[2])
-//   // if(event.target[3])
-
-//   let formObject = {};
-//   form_data.forEach((value_data, key_index) => {
-//     formObject[key_index] = value_data;
-//   });
-// Object.keys(formObject).forEach((elm,i)=>{
-//     console.log(elm,formObject[elm]);
-
-// })
-
-
-//   //   form_data.forEach((value_data, key_index) => {
-//   //     formObject[key_index] = value_data;
-//   //   });
-//   // console.log("Form Data:", formObject);
-//   //   console.log(JSON.stringify(formObject, null, 2)); // Display as a JSON string
-//   return false; // Prevent actual form submission
-// }
-
-
-function onch(ev){
-
-    const data = ev.target;
-    const parent = data.parentElement;
-
-    console.log(data,parent);
-
-    if(data.value.length>=2){
-        if(!data.nextElementSibling.classList.contains("error-toggle")){
-            data.nextElementSibling.classList.add("error-toggle")
-        }
-        if(!parent.nextElementSibling.classList.add("error-toggle")){
-            parent.nextElementSibling.classList.add("error-toggle")
-        }
-
-        if(data.type=="text"){
-            if(data.name=="first_name"){
-                console.log("first name yes");
-                if(0){
-
-                }
-                else{
-                    toggleError(data); // add error class based on element (data)
-                }
-            }
-            if(data.name=="last_name"){
-                console.log("last name yes");
-            }
-        }
+  if (data.type == "text") {
+    if (data.name == "first_name" || data.name == "last_name") {
+      const validate = validateFirstName(data_value);
+      element_ui_update(data, validate);
     }
-    else{
-        if(data.classList.contains("input-detail")){
-            data.nextElementSibling.classList.remove("error-toggle")
-            parent.nextElementSibling.classList.remove("error-toggle")
-        }
-    }
-
+  }
+  if (data.type == "email") {
+    const validate = validateEmail(data_value);
+    element_ui_update(data, validate);
+  }
+  if (data.type == "password") {
+    const validate = validatePassword(data_value);
+    element_ui_update(data, validate);
+  }
+}
+function validateFirstName(name) {
+  const firstNameRegex = /^[A-Za-z\d][A-Za-z\d.'-]{0,29}$/;
+  return firstNameRegex.test(name);
+}
+function validateEmail(email) {
+  const emailRegex = /^[a-zA-Z\d.%+-]+@[a-zA-Z\d-]+(?:\.[a-zA-Z\d-]+)*\.[a-zA-Z]{2,10}$/;
+  return emailRegex.test(email);
+}
+function validatePassword(password) {
+  const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*!])[A-Za-z\d@#$%^&*!]{8,30}$/;
+  return passwordRegex.test(password);
 }
 
-
-
-function vali_email(){
-    
+function element_ui_update(data, status) {
+  const data_parent = data.parentElement;
+  if (status) {
+    if (data.nextElementSibling.classList.contains("error-toggle")) {
+      data.nextElementSibling.classList.remove("error-toggle");
+      data_parent.nextElementSibling.classList.remove("error-toggle");
+      is_error = false;
+    }
+  } else if (!data.nextElementSibling.classList.contains("error-toggle")) {
+    data.nextElementSibling.classList.add("error-toggle");
+    data_parent.nextElementSibling.classList.add("error-toggle");
+    is_error = true;
+  }
 }
-function name(){
 
+function submit_form(element) {
+  element.preventDefault();
+  var is_empty_form = 0;
+  console.log(element);
+  for (var i = 0; i < 4; i++) {
+   if(element.target[i].value === ""){
+    is_empty_form++;
+   }
+  }
+
+  if (!is_error && !is_empty_form) {
+    alert("submited");
+  } else {
+    alert("fix - error or Empty form ");
+  }
 }
