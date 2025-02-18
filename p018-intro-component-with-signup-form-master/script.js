@@ -5,12 +5,12 @@ function data_validate(element) {
 
   if (data.type == "text") {
     if (data.name == "first_name" || data.name == "last_name") {
-      const validate = validateFirstName(data_value);
+      const validate = validateFirstName(data_value.trim());
       element_ui_update(data, validate);
     }
   }
   if (data.type == "email") {
-    const validate = validateEmail(data_value);
+    const validate = validateEmail(data_value.trim());
     element_ui_update(data, validate);
   }
   if (data.type == "password") {
