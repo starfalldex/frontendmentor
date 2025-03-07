@@ -31,14 +31,12 @@ function ButtonCart(param) {
         }
     }, [param.deleteItem])
 
-    useEffect(()=>{
-        if(param.confirmOrder == true) {
+    useEffect(() => {
+        if (param.confirmOrder == true) {
             resetItem();
         }
-    },[param.confirmOrder])
-
-
-
+    }, [param.confirmOrder])
+ 
     return (
         <>
             {!cartCounterDisplay && <button onClick={addToCart}
@@ -71,7 +69,6 @@ function ButtonCart(param) {
                     <img src="assets/icons/icon-increment-quantity.svg" alt="" />
                 </button>
             </div>}
-
         </>
     )
 }

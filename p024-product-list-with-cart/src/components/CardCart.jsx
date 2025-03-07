@@ -1,5 +1,4 @@
 function CardCart(param) {
-
     function removeCartCart() {
         param.setDeleteItem(param.data.name);
     }
@@ -16,7 +15,7 @@ function CardCart(param) {
             </div>
             <div className="flex items-center">
                 <div onClick={removeCartCart}
-                     className="btn p-[0.2em] border-2 border-[#c4a49d] rounded-full aspect-square" >
+                    className="btn p-[0.2em] border-2 border-[#c4a49d] rounded-full aspect-square" >
                     <img src="assets/icons/icon-remove-item.svg" alt="" />
                 </div>
             </div>

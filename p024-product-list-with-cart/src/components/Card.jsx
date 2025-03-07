@@ -1,7 +1,6 @@
 import ButtonCart from "./ButtonCart";
 import { useState, useEffect } from "react"
 
-
 function Card(param) {
 
   const [cardOutline, setCardOutline] = useState(false);
@@ -33,9 +32,6 @@ function Card(param) {
     }
     param.setCartItem(newcart)
   }, [itemCount])
-
-
-
 
   return (
     <>
