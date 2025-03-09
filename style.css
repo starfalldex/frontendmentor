@@ -64,7 +64,7 @@ h2 {
 .link-wrapper {
   max-height: 500px;
   overflow-y: scroll;
-  scrollbar-width: none; 
+  scrollbar-width: thin; 
 }
 .project-link {
   display: block;
@@ -77,10 +77,6 @@ h2 {
   transition: border 0.4s ease, filter 0.4s ease;
 }
 @media not (hover: none) {
-  .part:hover :where(.project-link:not(:hover)) {
-    filter: blur(2px) brightness(0.9);
-    transition: all 0.4s ease;
-  }
 
   .project-link:hover {
     border: 2px solid var(--primary_accent);
