@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Contact form</title>
+</head>
+
+<body>
+  <form class="form-contact" id="form1" action="">
+
+    <p class="heading">Contact Us</p>
+
+    <fieldset class="field flex" id="fieldset-fullName">
+      <div class="left w-half">
+        <p class="inp-label">First Name <span>*</span></p>
+        <input class="inp-style inp-txt" type="text" name="firstName" placeholder="name">
+        <div class="e-msg ">if Error</div>
+      </div>
+      <div class="right w-half">
+        <p class="inp-label">Last Name <span>*</span></p>
+        <input class="inp-style inp-txt" type="text" name="lastName" placeholder="surname">
+        <div class="e-msg ">if Error</div>
+      </div>
+    </fieldset>
+
+    <fieldset class="field" id="fieldset-email">
+      <p class="inp-label"> Email Address <span>*</span></p>
+      <input class="inp-style inp-txt" type="email" name="email" placeholder="example@try.com">
+      <div class="e-msg ">if Error</div>
+    </fieldset>
+
+    <fieldset class="field" id="fieldset-queryType">
+      <p class="inp-label">Query Type <span>*</span></p>
+      <div class="flex" id="radio-queryType">
+        <div class="w-half">
+          <div class="inp-style inp-radio flex">
+            <input type="radio" name="queryType" id="query-general" value="general-enquiry">
+            <label for="query-general">General Enquiry</label>
+          </div>
+        </div>
+
+        <div class="w-half">
+          <div class="inp-style inp-radio flex">
+            <input type="radio" name="queryType" id="query-support" value="support-request">
+            <label for="query-support">Support Request</label>
+          </div>
+        </div>
+      </div>
+      <div class="e-msg">Select query type</div>
+    </fieldset>
+
+    <fieldset class="field" id="fieldset-message">
+      <p class="inp-label"> Message <span>*</span></p>
+      <textarea class="inp-style txtarea" name="message" id="" placeholder="write here"></textarea>
+      <div class="e-msg ">if Error</div>
+    </fieldset>
+
+    <fieldset class="field field-agree" id="fieldset-consent">
+      <input type="checkbox" name="checkbox" id="check-agree">
+      <label for="check-agree">I consent to being contacted by the team</label>
+      <div class="e-msg">To submit this form, please consent to being contacted</div>
+    </fieldset>
+
+    <button class="btn-submit">Submit</button>
+
+  </form>
+
+<!-- 
+    <div class="form-submited flex">
+      <img src="./images/icon-success-check.svg" alt="">
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div> -->
+
+  <footer>
+    <p>
+      <a href="https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj">Challenge</a>
+      by Frontend Mentor <a href="https://github.com/dex-sleep">Code</a>
+      by Dex.
+    </p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
