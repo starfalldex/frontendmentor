@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inter;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p {
+    color: #3A2315;
+}
+
+body {
+    background-color: #F7E9DC;
+}
+
+.container {
+    margin: 5rem auto;
+    width: min(400px , 90%);
+}
+
+
+.balance-wrap {
+    background-color: #EC755E;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.balance-wrap p {
+    color: white;
+}
+
+.balance-wrap .left .topic {
+    margin-block: 0.5em;
+}
+
+.balance-wrap .left .price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.chart-card {
+    margin-top: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.chart-wrapper {
+    padding-block: 2rem;
+    border-bottom: 1px solid grey;
+}
+
+.chart-wrapper p {
+    color: #3A2315;
+    font-size: 2rem;
+}
+
+.total-expense {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-expense .left .topic {
+    margin-block: 0.5em;
+}
+
+.total-expense .left .price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.total-expense .right {
+    text-align: right;
+}
