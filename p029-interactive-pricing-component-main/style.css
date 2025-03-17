@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+    --cp1: hsl(174, 77%, 80%);
+    --cp2: hsl(174, 86%, 45%);
+    --cp3: hsl(14, 92%, 95%);
+    --cp4: hsl(15, 100%, 70%);
+    --cp5: hsl(226, 100%, 87%);
+    --cn1: hsl(0, 0%, 100%);
+    --cn2: hsl(230, 100%, 99%);
+    --cn3: hsl(224, 65%, 95%);
+    --cn4: hsl(223, 50%, 87%);
+    --cn5: hsl(225, 20%, 60%);
+    --cn6: hsl(227, 35%, 25%);
+    --custom-check-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+/* custom-range */
+.custom-range {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    align-content: center;
+    line-height: 0;
+}
+
+.custom-range input,
+.custom-range input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.custom-range input {
+    --progress: 50%;
+    width: 100%;
+    height: 0.5rem;
+    background: linear-gradient(90deg, var(--cp1) var(--progress), var(--cn3) var(--progress));
+    border-radius: 1rem;
+}
+
+.custom-range input::-webkit-slider-thumb {
+    width: 40px;
+    aspect-ratio: 1/1;
+    background-color: var(--cp2);
+    background-image: url("./images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% auto;
+    border-radius: 50%;
+
+    transition: background-color 0.3s ease;
+}
+
+.custom-range input::-webkit-slider-thumb:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 0.5rem 0 var(--cp2);
+}
+
+/* custom-checkbox */
+.custom-checkbox {
+    --_custom-check-gap: calc(var(--custom-check-size) / 5);
+    display: inline-block;
+    width: calc((var(--custom-check-size) + var(--_custom-check-gap)) * 2);
+    height: calc(var(--custom-check-size) + var(--_custom-check-gap) * 2);
+    position: relative;
+}
+
+.custom-checkbox input {
+    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-checkbox .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: var(--custom-check-size);
+    transition: background-color 0.4s ease;
+}
+
+.custom-checkbox .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--custom-check-size);
+    aspect-ratio: 1/1;
+    left: var(--_custom-check-gap);
+    bottom: var(--_custom-check-gap);
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+
+.custom-checkbox input:hover+.slider {
+    background-color: var(--cp2);
+}
+
+input:checked+.slider:before {
+    transform: translateX(var(--custom-check-size));
+}
+
+/* background */
+.background {
+    width: 100vw;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.background img {
+    width: max(1536px, 100vw);
+}
+
+body {
+    color: var(--cn5);
+    padding: 1rem;
+    background-color: var(--cn2);
+}
+
+/* title */
+.title {
+    width: fit-content;
+    margin-block: 3rem;
+    height: 10rem;
+    text-align: center;
+    margin-inline: auto;
+    position: relative;
+    align-content: center;
+}
+
+.title img {
+    position: absolute;
+    height: 10rem;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+}
+
+.title .txt1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--cn6);
+}
+
+/* component */
+.component-select-price {
+    background-color: var(--cn1);
+    width: 600px;
+    margin-inline: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 var(--cn4);
+}
+
+.section-common {
+    padding: 3rem;
+}
+
+.sec-select-price>*+* {
+    margin-top: 1rem;
+}
+
+.sec-select-price {
+    border-bottom: 1px solid var(--cn4);
+}
+
+.wrap-views-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrap-views-price>p {
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.wrap-views-price div {
+    display: flex;
+    align-items: center;
+}
+
+.wrap-views-price #currentPrice {
+    margin-inline: 0.5rem;
+    font-weight: bold;
+    color: var(--cn6);
+    font-size: 2rem;
+}
+
+.wrap-tenure {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.wrap-tenure .discount {
+    padding: 0.2em 0.5em;
+    background-color: var(--cp3);
+    color: var(--cp4);
+    border-radius: 1rem;
+}
+
+.sec-start-trial {
+    display: flex;
+}
+
+.sec-start-trial .left {
+    width: 50%;
+    display: flex;
+}
+
+.wrap-features {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.feature img {
+    min-width: 12px;
+
+    object-fit: contain;
+}
+
+.sec-start-trial .right {
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.sec-start-trial .right button {
+    background-color: var(--cn6);
+    padding: 1em 3em;
+    color: var(--cn1);
+    font-size: min(1rem, 5vw);
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4em;
+    transition: filter 0.4s ease;
+    cursor: pointer;
+}
+
+.sec-start-trial .right button:hover {
+    filter: contrast(1.5);
+}
+
+@media (max-width: 640px) {
+    .component-select-price {
+        background-color: var(--cn1);
+        width: min(380px, 95%);
+        margin-inline: auto;
+        border-radius: 1rem;
+        box-shadow: 0 0 1rem 0 var(--cn4);
+    }
+
+    .custom-range {
+        max-width: 300px;
+    }
+
+    .custom-checkbox {
+        rotate: 90deg;
+    }
+
+    .sec-select-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrap-views-price {
+        flex-direction: column;
+    }
+
+    .wrap-views-price>p {
+        font-size: min(1.5rem, 6vw);
+    }
+
+    .wrap-views-price #currentPrice {
+        font-size: min(3rem, 12vw);
+    }
+
+    .wrap-tenure {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sec-start-trial {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .wrap-tenure .discount {
+        margin: 0.5rem;
+        display: block;
+        text-wrap: nowrap;
+    }
+
+    .wrap-features {
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+    .sec-start-trial .left {
+        width: 100%;
+    }
+
+    .sec-start-trial .right {
+        width: 100%;
+    }
+}
