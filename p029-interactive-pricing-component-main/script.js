@@ -22,20 +22,17 @@ function priceHandler(percent) {
     const maxPrice = 32, maxViews = 1000;
     const discount = yearDiscount.checked;
     let price = 0, views = 0;
-    if (percent == 0) {
-        price = maxPrice * 0.125;
-        views = maxViews * 0.1;
-    } else {
-        price = maxPrice * percent;
-        views = maxViews * percent;
-    }
+    if (percent == 0) percent = 0.05;
+    price = maxPrice * percent;
+    views = maxViews * percent;
+
 
     if (discount) {
         price *= (12 * 0.75);
         views *= 12;
-        currentPrice.nextSibling.innerHTML = `/year`;
+        currentPrice.nextElementSibling.innerHTML = `/year`;
     } else {
-        currentPrice.nextSibling.innerHTML = `/month`;
+        currentPrice.nextElementSibling.innerHTML = `/month`;
     }
     currentPrice.innerHTML = `$${price.toFixed(2)}`;
     if (views >= 1000) {
