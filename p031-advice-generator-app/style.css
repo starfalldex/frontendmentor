@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --cd1: #fff;
+  --cd2: #121212;
+  --cp1: hsl(193, 38%, 86%);
+  --cp2: hsl(150, 100%, 66%);
+
+  --cn1: hsl(217, 19%, 38%);
+  --cn2: hsl(217, 19%, 24%);
+  --cn3: hsl(218, 23%, 16%);
+  --gbr1: 0.5rem;
+  --gp1: 2rem;
+  --gg1: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+body {
+  background-color: var(--cn3);
+}
+
+.container-wrapper{
+  position: absolute;
+
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-200px, -50%);
+}
+
+.container {
+  background-color: var(--cn2);
+  width: min(400px, 90%);
+  padding: 2rem;
+  font-size: 28px;
+  color: var(--cd1);
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 0 1rem 0 var(--cn2);
+  cursor: default;
+
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.container:not(:hover) {
+  transition: transform 0.4s ease, box-shadow 1s ease;
+}
+
+.container:hover {
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.1s ease, box-shadow 1s ease;
+}
+
+.container>img {
+  width: 100%;
+}
+
+.advice-number {
+  font-size: 1rem;
+  color: var(--cp2);
+}
+
+.new-advice {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--cp2);
+  align-content: center;
+  border-radius: 50%;
+  line-height: 0;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  will-change: transform;
+  cursor: pointer;
+
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  /* transition: filter 0.2s ease; */
+}
+
+.new-advice>img {
+  scale: 0.8;
+}
+
+.new-advice:hover {
+  box-shadow: 0 0 1rem 0 var(--cp2);
+  filter: brightness(1.1);
+}
+
+.container>* {
+  transition-property: transform text-shadow;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.container:hover>* {
+  transform: translateZ(5px);
+}
+
+.container:hover p {
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+}
+
+.container:hover>.new-advice {
+  transform: translate(-50%, 50%) translateZ(0.5rem);
+}
