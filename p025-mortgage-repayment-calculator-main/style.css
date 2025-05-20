@@ -34,15 +34,6 @@ input {
     outline: none;
     /* background-color: lightskyblue; */
 }
-footer {
-    text-align: center;
-    width: 100%;
-    background-color: white;
-    position: fixed;
-    padding-inline: 1rem;
-    padding-bottom: 0.2rem;
-    bottom: 0;
-}
 
 /* main styling */
 body {

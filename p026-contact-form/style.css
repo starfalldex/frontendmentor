@@ -45,16 +45,6 @@ textarea {
 button {
     cursor: pointer;
 }
-footer {
-    background-color: white;
-    width: 100%;
-    padding-inline: 1rem;
-    padding-bottom: 0.2rem;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-}
-
 /* global styling */
 .flex {
     display: flex;
