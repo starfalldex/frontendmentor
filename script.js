@@ -31,14 +31,14 @@ function addProject(project, wrapper) {
   img.src = project.projectImage;
   img.alt = 'image here';
 
-  const video = document.createElement('video');
-  video.classList.add('project-video');
-  video.src = project.projectVideo;
+  // const video = document.createElement('video');
+  // video.classList.add('project-video');
+  // video.src = project.projectVideo;
   // video.autoplay = true;
   // video.loop = true;
 
   projectContent.appendChild(img);
-  projectContent.appendChild(video);
+  // projectContent.appendChild(video);
 
   // Project Details
   const projectDetails = document.createElement('div');
