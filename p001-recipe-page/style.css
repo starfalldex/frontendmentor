@@ -1,116 +1,144 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", Helvetica, sans-serif;
-    --brown: hsl(14, 45%, 36%);
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  --brown: hsl(14, 45%, 36%);
+  box-sizing: border-box;
 }
 
 h1,
 h2,
 h3 {
-    font-family: "Playfair Display", serif;
-    font-weight: 900;
+  font-family: "Noto Serif";
+}
+
+h1 {
+  margin-bottom: 24px;
+  color: hsl(30, 10%, 34%);
+}
+
+h2 {
+  color: var(--brown);
+}
+
+h3 {
+  color: hsl(332, 51%, 32%);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(219, 219, 219);
+}
+
+span.bold {
+  font-weight: bold;
 }
 
 body {
-    background-color: hsl(30, 54%, 90%);
+  background-color: hsl(30, 54%, 90%);
 }
 
-.main-section {
-    margin-inline: auto;
-    width: 70%;
-    background-color: white;
-    border-radius: 0 0 2rem 2rem;
-    padding-inline: 4rem;
+main {
+  margin-inline: auto;
+  width: 70%;
+  background-color: white;
+  padding-block: 48px;
+  padding-inline: 64px;
 }
 
-.img-div {
-    display: flex;
-    justify-content: center;
+.banner-image {
+  overflow: hidden;
+  border-radius: 16px;
+  line-height: 0;
 }
+
 .omelette-img {
-    width: 100%;
-    border-radius: 0 0 2rem 2rem;
-}
-.gaps {
-    padding-block: 2rem;
-    color: hsl(30, 10%, 34%);
-    border-bottom: 2px solid rgb(219, 219, 219);
-}
-.gaps h2 {
-    color: var(--brown);
+  width: 100%;
 }
 
-.gaps > ol,
+.content {
+  margin-top: 48px;
+}
+
+.topics {
+  margin-block: 32px;
+}
+
+.topics>ol,
 ul {
-    padding-inline: 2rem;
+  padding-inline: 32px;
 }
 
 .li-gap {
-    padding-block: 0.5rem;
+  padding-block: 8px;
 }
 
-.nth-child-1 {
-    margin-top: 2rem;
-    padding: 0;
-    border-bottom: transparent;
-}
-.nth-child-1 div p {
-    padding-top: 1rem;
+.preparation-time {
+  background-color: hsl(330, 100%, 96%);
+  padding-inline: 32px;
+  padding-block: 28px;
+  border-radius: 16px;
 }
 
-.prepare-time {
-    background-color: hsl(330, 100%, 98%);
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 1rem;
-}
-.prepare-time h3 {
-    color: hsl(332, 51%, 32%);
-}
-.prepare-time > ul {
-    padding: 0rem;
-    padding-inline: 2rem;
+.preparation-time h3 {
+  margin-bottom: 4px;
 }
 
-.line {
-    background-color: hsla(15, 4%, 18%, 0.39);
-    width: 90%;
-    margin: auto;
-    height: 1px;
+.preparation-time ul {
+  padding-inline: 32px;
 }
-.list-table .line {
+
+.preparation-time li {
+  padding-block: 4px;
+}
+
+.nutrition {
+  margin-bottom: 0;
+}
+
+.nutrition-table {
+  display: flex;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.nutrition-table .part {
+  width: 100%;
+}
+
+.nutrition-table .part p {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid hsla(15, 4%, 18%, 0.23);
+}
+
+@media (max-width: 1024px) {
+  main {
+    width: 80%;
+    padding-inline: 48px;
+  }
+
+  .content {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
     width: 100%;
-}
+    padding: 32px;
+  }
 
-.list-table {
-    margin: 0;
-    padding: 0;
-}
-.list-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-}
-.list-left {
-    width: 50%;
-}
+  .content {
+    margin-top: 24px;
+  }
 
-.list-right {
-    width: 50%;
-    color: var(--brown);
-}
-@media (max-width: 700px) {
-    .main-section {
-        width: 100%;
-        padding-inline: 2rem;
-    }
-    .omelette-img {
-        width:130%;
-        border-radius: 0;
-    }
+  .topics {
+    margin-block: 24px;
+  }
 }
