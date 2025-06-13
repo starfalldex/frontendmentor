@@ -48,7 +48,7 @@
 
 
 :root[data-theme='light'] {
-  /* something here */
+    --colorPrimary1: hsl(0, 100%, 52%);
 }
 
 
