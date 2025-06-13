@@ -107,7 +107,7 @@ hr {
   margin-top: 16px;
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
   .question-answer-wrapper:hover {
     background-color: var(--colorElevation2);
     border-radius: 12px;
