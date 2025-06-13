@@ -40,7 +40,7 @@ span.bold {
 }
 
 body {
-  background-color: hsl(30, 54%, 90%);
+  background-color: hsla(0, 0%, 0%, 0.07);
 }
 
 main {
@@ -49,12 +49,15 @@ main {
   background-color: white;
   padding-block: 48px;
   padding-inline: 64px;
+
+  border: 1px solid rgba(0, 0, 0, 0.23);
 }
 
 .banner-image {
   overflow: hidden;
   border-radius: 16px;
   line-height: 0;
+  border: 1px solid rgba(0, 0, 0, 0.23);
 }
 
 .omelette-img {
@@ -79,10 +82,10 @@ ul {
 }
 
 .preparation-time {
-  background-color: hsl(330, 100%, 96%);
   padding-inline: 32px;
   padding-block: 28px;
   border-radius: 16px;
+  border: 1px solid hsl(330, 100%, 90%);
 }
 
 .preparation-time h3 {
