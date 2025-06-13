@@ -6,29 +6,32 @@
 
 
   /* theme*/
-  
+
   --colorElevation0: transparent;
   --colorElevation1: hsla(0, 0%, 100%, 0.02);
   --colorElevation2: hsla(0, 0%, 100%, 0.04);
   --colorElevation3: hsla(0, 0%, 100%, 0.08);
   /* --colorElevation4: hsla(0, 0%, 100%, 0.12); */
-  
+
   --colorText: hsl(0, 0%, 96%);
   --colorText1: hsla(0, 0%, 100%, 0.86);
   --colorText2: hsla(0, 0%, 100%, 0.60);
   /* --colorText3: hsla(0, 0%, 100%, 0.38); */
   /* --colorText4: hsla(0, 0%, 100%, 0.20); */
-  
+
   /* --colorElements: #808080; */
   --colorElements1: hsla(0, 0%, 100%, 0.20);
-  /* --colorElements2: hsla(0, 0%, 100%, 0.40); */
+  --colorElements2: hsla(0, 0%, 100%, 0.40);
   /* --colorElements3: hsla(0, 0%, 100%, 0.60); */
   /* --colorElements4: hsla(0, 0%, 100%, 0.80); */
-  
+
   --colorPrimary: black;
   --colorPrimary1: hsl(0, 0%, 7%);
   --colorPrimary2: hsla(0, 0%, 0%, 0.60);
-  /* --colorSecondary: white; */
+  --colorPrimary3: hsla(0, 0%, 0%, 0.4);
+  --colorSecondary: white;
+  --colorSecondary2: hsl(0, 0%, 93%);
+  --colorSecondary3: hsla(0, 0%, 100%, 0.60);
   --colorAccent: #dc143c;
 
   --colorError: hsl(358, 62%, 48%);
@@ -108,7 +111,7 @@ footer p {
   position: relative;
   border: 1px solid var(--colorElements1);
   border-radius: var(--rounded);
-  transition: border 0.2s ease, filter 0.4s ease;
+  overflow: hidden;
 }
 
 .project-content {
@@ -116,7 +119,8 @@ footer p {
   width: 100%;
   position: relative;
   border-radius: var(--rounded);
-  overflow: hidden;
+
+  transition: 0.3s scale ease, 0.3s filter ease;
 }
 
 .project-image {
@@ -148,8 +152,7 @@ footer p {
   content: "";
   width: 100%;
   height: 60%;
-  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 30%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 24%);
+  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 35%);
   scale: 1.2;
   position: absolute;
   z-index: -1;
@@ -168,8 +171,9 @@ footer p {
 }
 
 .open-project {
-  background-color: var(--colorPrimary2);
-  backdrop-filter: blur(8px);
+  color: var(--colorSecondary);
+  background-color: var(--colorPrimary3);
+  backdrop-filter: blur(4px);
   padding-inline: calc(var(--gap) * 2);
   padding-block: var(--gap);
   position: absolute;
@@ -177,27 +181,31 @@ footer p {
   left: 50%;
   top: calc(var(--gap) + 50%);
   transform: translate(-50%, -50%);
+  border: 1px solid var(--colorElements2);
   border-radius: 2em;
   opacity: 0;
   box-shadow: 0 2px 8px 0px var(--colorPrimary2);
+  transition: 0.4s opacity ease;
 }
 
 
 @media (hover:hover) {
   .project-link:hover .project-content {
     filter: brightness(50%);
+    scale: 1.05;
   }
 
   .project-link:hover .open-project {
     opacity: 1;
   }
-
-  .project-link:active {
-    background-color: var(--colorElevation3);
-  }
 }
 
 @media (hover:none) {
+  .project-link:active .project-content {
+    filter: brightness(50%);
+    scale: 1.05;
+  }
+
   .project-link:focus-within {
     background-color: var(--colorElevation3);
   }
