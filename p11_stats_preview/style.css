@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 :root {
   --primary-very-dark: hsl(233, 47%, 7%);
-  --primary-dark-desaturated: hsl(244, 38%, 16%);
+  --primary-dark-desaturated: hsl(244, 38%, 10%);
   --primary-accent: hsl(277, 64%, 61%);
   --neutral-white: hsl(0, 0%, 100%);
   --neutral-paragraph: hsla(0, 0%, 50%, 1);
   --neutral-heading: hsla(0, 0%, 100%, 1);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +16,7 @@
   font-family: Inter, Arial, Helvetica, sans-serif;
   color: var(--neutral-paragraph);
 }
+
 body {
   background-color: var(--primary-very-dark);
 }
@@ -22,27 +25,32 @@ body {
   background-color: var(--primary-dark-desaturated);
   width: 1080px;
   max-width: 95%;
-  margin: 10rem auto;
+  margin: 160px auto;
   display: flex;
-  border-radius: 1rem;
+  border-radius: 16px;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
+
 .content-zone {
   width: 50%;
-  padding: 4rem;
+  padding: 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .text-heading {
   font-size: 2.5rem;
   color: var(--neutral-white);
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
 }
+
 .text-heading span {
   color: var(--primary-accent);
 }
+
 .text-description {
   color: var(--neutral-paragraph);
 }
@@ -50,15 +58,17 @@ body {
 .stats-zone {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
-  gap: 1rem;
+  margin-top: 24px;
+  gap: 16px;
 }
+
 .number {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   color: var(--neutral-white);
 }
+
 .type {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -73,6 +83,7 @@ body {
   aspect-ratio: 540/446;
   background-size: 100%;
 }
+
 .image::after {
   content: "";
   position: absolute;
@@ -86,32 +97,38 @@ body {
 
 @media (max-width: 1280px) {
   .stats-preview {
-    margin: 5rem auto;
+    margin: 80px auto;
     width: 640px;
     max-width: 80%;
     flex-direction: column-reverse;
   }
+
   .content-zone {
     width: 100%;
   }
+
   .image {
     width: 100%;
     background-image: url(images/image-header-mobile.jpg);
-    aspect-ratio: 654 / 480 ;
+    aspect-ratio: 654 / 480;
     background-size: cover;
   }
 }
+
 @media (max-width: 640px) {
   .stats-preview {
     max-width: 90%;
     flex-direction: column-reverse;
   }
+
   .content-zone {
-    padding: 2rem;
+    padding: 24px;
   }
+
   .text-heading {
     font-size: 2rem;
   }
+
   .stats-zone {
     flex-wrap: wrap;
   }
