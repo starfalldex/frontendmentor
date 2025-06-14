@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,GRAD@8..144,100..1000,-200..150&display=swap');
+
 :root {
   --color_1: hsl(31, 77%, 52%);
   --color_2: hsl(184, 100%, 22%);
   --color_3: hsl(179, 100%, 13%);
+  --cc: rgba(77, 67, 86, 0.08);
+  --cc: rgba(77, 67, 86, 0.012);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -12,94 +17,142 @@
   font-family: Inter, Arial, Helvetica, sans-serif;
   color: whitesmoke;
 }
+
 body {
-  background-color: whitesmoke;
+  background-color: #ededed;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 .column-preview {
   width: 900px;
   margin: 100px auto;
   display: flex;
-  border-radius: 1rem;
+  border-radius: 13px;
   overflow: hidden;
 }
+
 .vehicle {
-  padding: 3rem;
+  padding: 48px;
   position: relative;
 }
+
 .column-preview .sedans {
   background-color: var(--color_1);
 }
+
 .column-preview .suvs {
   background-color: var(--color_2);
 }
+
 .column-preview .luxury {
   background-color: var(--color_3);
 }
 
 .content-zone {
-  margin-top: 2rem;
-  margin-bottom: 6rem;
+  margin-top: 32px;
+  margin-bottom: 96px;
 }
+
 .text-name {
-  margin-bottom: 1rem;
   font-family: "Oswald";
-  font-size: 2rem;
+  font-size: 2.61rem;
   text-transform: uppercase;
+  margin-bottom: 16px;
 }
+
 .text-description {
   font-weight: 300;
 }
-.button-learn-more {
-  background-color: whitesmoke;
-  font-weight: bold;
+
+.link-learn-more {
+  font-family: "Roboto Flex";
+  font-weight: 600;
   color: black;
-  padding-inline: 2rem;
-  padding-block: 1rem;
-  border-radius: 3rem;
-  border: 2px solid whitesmoke;
+  background-color: whitesmoke;
+  width: 120px;
+  padding-block: 16px;
 
+  display: flex;
+  justify-content: center;
+
+  border-radius: 48px;
   position: absolute;
-  left: 3rem;
-  bottom: 2rem;
-
-  transition: background-color 0.4s ease;
+  left: 48px;
+  bottom: 32px;
+  transition: all 0.2s ease;
 }
 
 .btn-sedan {
   color: var(--color_1);
 }
+
 .btn-suv {
   color: var(--color_2);
 }
+
 .btn-luxury {
   color: var(--color_3);
 }
 
-@media not (hover: none) {
-  .button-learn-more:hover {
-    background-color: transparent;
-    border: 2px solid white;
+@media (hover: hover) {
+  .link-learn-more:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    outline: 1px solid rgba(255, 255, 255, 0.55);
     color: white;
-    transition: all 0.4s ease;
-    cursor: pointer;
+    font-variation-settings: "GRAD" 89;
   }
+}
+
+.link-learn-more:active {
+  background-color: rgba(0, 0, 0, 0.12);
+  outline: 1px solid rgba(255, 255, 255, 0.34);
+  color: white;
+  font-variation-settings: "GRAD" -89;
 }
 
 @media (max-width: 1024px) {
   .column-preview {
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
 @media (max-width: 768px) {
+
   .column-preview {
-    max-width: 80%;
+    max-width: 90%;
+    margin: 16px auto;
     flex-direction: column;
   }
-  .text-nmae {
-    font-size: 2rem;
+
+  .vehicle {
+    padding: 24px;
   }
+
+  .text-name {
+    font-size: 4.23rem;
+  }
+
   .text-description {
-    font-size: 1.2rem;
+    font-size: 1.61rem;
+  }
+
+  .link-learn-more {
+    width: 200px;
+    font-size: 1.61rem;
+
+    left: 50%;
+    /* bottom: 32px; */
+    transform: translate(-50%, 0);
   }
 }
