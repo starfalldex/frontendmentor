@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0; 
+    padding: 0;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #efefef;
+}
+
+.card {
+    background-color: white;
+    width: 540px;
+    margin: 100px auto;
+    padding: 32px;
+    border: 1px solid #121212;
+    border-radius: 16px;
+    box-shadow: 8px 8px 0 0px #121212;
+    transition: box-shadow 0.2s ease;
+    transform: scale(0.8);
+    cursor: pointer;
+}
+.card > img {
+    width: 100%;
+    border-radius: 12px;
+    outline: 1px solid #121212;
+}
+
+.detail {
+    margin-block: 16px;
+    width: fit-content;
+}
+#type {
+    background-color: #F4CF49;
+    padding-inline: 16px;
+    padding-block: 8px;
+    border-radius: 8px;
+}
+#name{
+    font-weight: bold;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+#description {
+    color: gray;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.profile > img {
+    width: 3rem;
+}
+.profile-name {
+    margin-inline-start: 1rem;
+}
+
+.card:hover {
+    box-shadow: -4px -4px 0 0px #121212;
+    transition: box-shadow 0.5s ease;
+}
+.card:hover  #name{
+    color: #F4CF49;
+}
+
+@media (max-width:440px){
+    .card{
+        margin: 80px auto;
+        padding: 1rem;
+        width: 90%;
+        transform: scale(0.8);
+    }
+    .detail {
+        margin-block: 0.5rem;
+    }
+    #type {
+        padding-inline: 0.5rem;
+        padding-block: 0.25rem;
+    }
+}

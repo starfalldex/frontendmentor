@@ -1,0 +1,6 @@
+button, .btn {
+    cursor: pointer;
+}
+.hide-scroll {
+    scrollbar-width: none;
+}

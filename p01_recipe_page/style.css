@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  --brown: hsl(14, 45%, 36%);
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Noto Serif";
+}
+
+h1 {
+  margin-bottom: 24px;
+  color: hsl(30, 10%, 34%);
+}
+
+h2 {
+  color: var(--brown);
+}
+
+h3 {
+  color: hsl(332, 51%, 32%);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(219, 219, 219);
+}
+
+span.bold {
+  font-weight: bold;
+}
+
+body {
+  background-color: hsla(0, 0%, 0%, 0.07);
+}
+
+main {
+  margin-inline: auto;
+  width: 70%;
+  background-color: white;
+  padding-block: 48px;
+  padding-inline: 64px;
+
+  border: 1px solid rgba(0, 0, 0, 0.23);
+}
+
+.banner-image {
+  overflow: hidden;
+  border-radius: 16px;
+  line-height: 0;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+}
+
+.omelette-img {
+  width: 100%;
+}
+
+.content {
+  margin-top: 48px;
+}
+
+.topics {
+  margin-block: 32px;
+}
+
+.topics>ol,
+ul {
+  padding-inline: 32px;
+}
+
+.li-gap {
+  padding-block: 8px;
+}
+
+.preparation-time {
+  padding-inline: 32px;
+  padding-block: 28px;
+  border-radius: 16px;
+  border: 1px solid hsl(330, 100%, 90%);
+}
+
+.preparation-time h3 {
+  margin-bottom: 4px;
+}
+
+.preparation-time ul {
+  padding-inline: 32px;
+}
+
+.preparation-time li {
+  padding-block: 4px;
+}
+
+.nutrition {
+  margin-bottom: 0;
+}
+
+.nutrition-table {
+  display: flex;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.nutrition-table .part {
+  width: 100%;
+}
+
+.nutrition-table .part p {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid hsla(15, 4%, 18%, 0.23);
+}
+
+@media (max-width: 1024px) {
+  main {
+    width: 80%;
+    padding-inline: 48px;
+  }
+
+  .content {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    width: 100%;
+    padding: 32px;
+  }
+
+  .content {
+    margin-top: 24px;
+  }
+
+  .topics {
+    margin-block: 24px;
+  }
+}

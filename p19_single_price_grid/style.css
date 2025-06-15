@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --font_body: "Inter";
+  --font-size-1: 2rem;
+  --font-size-2: 1.2rem;
+  --font-size-3: 0.8rem;
+
+  --primary_c1_1: #2bb3b1;
+  --primary_c1_2: #4abebd;
+  --primary_c1_3: hsl(176, 10%, 31%);
+  --primary_c2_1: #c0df34;
+  --primary_c2_2: #e09b19;
+  --neutral_c1: hsl(204, 43%, 93%);
+  --neutral_c2: hsl(218, 22%, 67%);
+
+  --padding-common: 3em;
+  --padding-common-sm: 2em;
+  --border-radius-common: 0.5em;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font_body), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+body {
+  background-color: var(--neutral_c1);
+}
+/* button reset property */
+.button-property-reset {
+  border: none;
+  background-color: white;
+}
+.single-price-grid {
+  background-color: white;
+  width: 800px;
+  max-width: 95%;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-areas: "a a" "b c";
+
+  border-radius: var(--border-radius-common);
+  overflow: hidden;
+}
+/* first section */
+.section-first {
+  grid-area: a;
+  padding: var(--padding-common);
+}
+.section-first * + * {
+  margin-top: 1em;
+}
+.section-first :nth-child(1) {
+  color: var(--primary_c1_1);
+  font-size: var(--font-size-1);
+}
+.section-first :nth-child(2) {
+  color: var(--primary_c2_1);
+  font-size: var(--font-size-2);
+}
+.section-first :nth-child(3) {
+  color: var(--neutral_c2);
+}
+
+/* second section */
+.section-second {
+  color: white;
+  background-color: var(--primary_c1_1);
+  grid-area: b;
+  padding: var(--padding-common);
+
+  transition: background-color 0.4s ease;
+}
+.section-second :first-child {
+  font-size: var(--font-size-2);
+}
+.section-second * + * {
+  margin-top: 1em;
+}
+.section-second div {
+  display: flex;
+  gap: 0.5rem;
+}
+.section-second div p:first-child {
+  font-size: var(--font-size-1);
+}
+.section-second div p:last-child {
+  font-weight: 200;
+}
+.button-sign-up {
+  background-color: var(--primary_c2_1);
+  color: white;
+  width: 100%;
+  padding-block: 1em;
+  border-radius: var(--border-radius-common);
+
+}
+/* third section */
+.section-third {
+  color: white;
+  background-color: var(--primary_c1_1);
+  grid-area: c;
+  padding: var(--padding-common);
+
+  transition: background-color 0.4s ease;
+
+}
+.section-third * + * {
+  margin-top: 0.2em;
+}
+.section-third :first-child {
+  font-size: var(--font-size-2);
+}
+
+
+/* hover effects all */
+@media not (hover:none ) {
+  .section-third:hover,
+  .section-second:hover {
+    background-color: var(--primary_c1_2);
+    transition: all 0.4s ease;
+    cursor: default;
+  }
+  .button-sign-up:hover {
+    background-color: var(--primary_c2_2);
+    transition: all 0.4s ease;
+  }
+}
+/* active effects all */
+.section-third:active,
+.section-second:active {
+  background-color: var(--primary_c1_3);
+  transition: all 0.4s ease;
+}
+@media (max-width: 640px) {
+  .single-price-grid {
+    /* background-color: white;
+    max-width: 95%;
+    margin: 5rem auto; */
+    grid-template-areas: "a" "b" "c";
+  }
+  .section-first, .section-second, .section-third {
+    padding: var(--padding-common-sm);
+  }
+}

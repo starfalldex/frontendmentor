@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --colorSurface: hsl(0, 0%, 100%);
+  --colorBG: hsl(0 0%, 93%);
+  --colorBorder: hsla(0, 0%, 0%, 0.23);
+  --colorText1: hsl(218, 44%, 22%);
+  --colorText2: hsl(216, 15%, 48%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorSurface: hsla(0, 0%, 100%, 0.02);
+    --colorBG: #121212;
+    --colorBorder: hsla(0, 0%, 100%, 0.15);
+    --colorText1: hsla(0, 0%, 100%, 0.93);
+    --colorText2: hsla(0, 0%, 100%, 0.60);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: var(--colorBG);
+}
+
+.qrcode-card {
+  background-color: var(--colorSurface);
+  width: 320px;
+  margin: 100px auto;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--colorBorder);
+  box-shadow: 0 16px 16px -16px hsla(0, 0%, 0%, 0.23), 0 2px 4px 1px hsla(0, 0%, 0%, 0.15);
+}
+
+.image {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.image img {
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.text-zone {
+  text-align: center;
+}
+
+.main-text {
+  color: var(--colorText1);
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.description-text {
+  margin-bottom: 16px;
+  color: var(--colorText2);
+}
+
+@media (hover: hover) {
+  .image:hover>img {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+  }
+}
+
+@media (max-width: 640px) {
+  .qrcode-card {
+    max-width: 90%;
+  }
+}

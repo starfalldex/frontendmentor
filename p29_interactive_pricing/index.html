@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Interactive pricing component</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="background">
+    <img src="./images/bg-pattern.svg" alt="">
+  </div>
+  <div class="title">
+    <img src="./images/pattern-circles.svg" alt="">
+    <p class="txt txt1">Simple, traffic-based pricing</p>
+    <p class="txt txt2">Sign-up for our 30-day trial. No credit card required. </p>
+  </div>
+  <div class="component-select-price">
+    <div class="section-common sec-select-price">
+      <div class="wrap-views-price">
+        <p><span id="currentViews">500K</span> Pageviews</p>
+        <div><span id="currentPrice">$16.00</span>
+          <p>/month</p>
+        </div>
+      </div>
+      <label class="part custom-range">
+        <input type="range" min="1" max="9" step="1">
+      </label>
+      <div class="wrap-tenure">
+        <p>Monthly Billing</p>
+        <label class="custom-checkbox" for="yearDiscount">
+          <input type="checkbox" id="yearDiscount">
+          <span class="slider round"></span>
+        </label>
+        <p>Yearly Billing <span class="discount">25% discount</span></p>
+      </div>
+    </div>
+
+    <div class="section-common sec-start-trial">
+      <div class="left">
+        <div class="wrap-features">
+          <div class="feature">
+            <img src="./images/icon-check.svg" alt="">
+            <p>Unlimited websites</p>
+          </div>
+          <div class="feature"><img src="./images/icon-check.svg" alt="">
+            <p>100% data ownership</p>
+          </div>
+          <div class="feature"><img src="./images/icon-check.svg" alt="">
+            <p>Email reports</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="right">
+        <button> Start my trial </button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

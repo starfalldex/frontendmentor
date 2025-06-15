@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --clicked-text: whitesmoke;
+  --clicked-hightlight: #fa7715;
+  --back_color: hsl(228, 10%, 8%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: white;
+}
+
+body {
+  background-color: var(--back_color);
+}
+
+button,
+.rating {
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.rating-card {
+  background-image: linear-gradient(180deg, #222a34, #131920);
+  width: 360px;
+  margin: 100px auto;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.star {
+  background-color: #272e38;
+  padding: 12px;
+  width: fit-content;
+  border-radius: 2rem;
+  line-height: 0;
+}
+
+.part {
+  margin-block: 20px;
+}
+
+.question {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.description {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.rating-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating {
+  background-color: #272e38;
+  color: gray;
+  width: 48px;
+  height: 48px;
+  align-content: center;
+  text-align: center;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.button-submit {
+  background-color: var(--clicked-hightlight);
+  color: #171e26;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background-color 0.4s ease;
+  cursor: pointer;
+}
+
+/* by js */
+.rating-click {
+  transform: scale(1.1);
+  background-color: var(--clicked-hightlight);
+  color: var(--clicked-text);
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  cursor: pointer;
+}
+
+/* 2nd phase card */
+.visibility-hidden {
+  display: none;
+}
+
+.after-rate-content {
+  text-align: center;
+}
+
+.arc-part {
+  margin-top: 1rem;
+}
+
+.selected {
+  color: var(--clicked-hightlight);
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.gratitude {
+  font-size: 2rem;
+}
+
+@media (hover: hover) {
+
+  .rating:hover,
+  .button-submit:hover {
+    background-color: silver;
+    color: #171e26;
+    transition: background-color 0.4s ease;
+    box-shadow: 0 4px 16px -4px rgb(0, 0, 0), 0 1px 0 1px hsla(0, 0%, 0%, 0.23);
+  }
+}
+
+.rating:hover,
+.button-submit:active {
+  background-color: silver;
+  color: #171e26;
+  transition: background-color 0.4s ease;
+  box-shadow: 0 4px 4px -4px rgb(0, 0, 0), 0 1px 0 1px hsla(0, 0%, 0%, 0.23);
+}
+
+@media (max-width: 640px) {
+  .rating-card {
+    min-width: 300px;
+    max-width: 90%;
+  }
+
+  .description {
+    color: gray;
+  }
+}

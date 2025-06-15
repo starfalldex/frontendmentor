@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+    --fs_b: 16px;
+    --fw_n: 400;
+    --fw_b: 700;
+
+    --c_d1: white;
+    --c_d2: black;
+    --c_p1: hsl(148, 38%, 91%);
+    --c_p2: hsl(169, 82%, 27%);
+    --c_p2_h: hsl(169, 82%, 15%);
+    --c_p3: hsl(0, 66%, 54%);
+    --c_n1: #87a3a6;
+    --c_n2: #2b4246;
+
+    --g_br: 0.5rem;
+    --g_p: 2rem;
+    --g_td: 0.4s;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+    font-size: var(--fs_b);
+    font-weight: var(--fw_n);
+}
+/* default properties update */
+fieldset,
+input,
+textarea,
+button {
+    border: none;
+    outline: none;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
+}
+textarea {
+    height: 5rem;
+    resize: none;
+}
+button {
+    cursor: pointer;
+}
+/* global styling */
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+.w-half {
+    width: 50%;
+}
+/* main styling */
+body {
+    background-color: var(--c_p1);
+}
+
+form {
+    background-color: var(--c_d1);
+    max-width: min(640px, 95%);
+    margin: 2rem auto;
+    padding: var(--g_p);
+    border-radius: calc(var(--g_br) * 2);
+}
+.heading {
+    font-size: calc(var(--fs_b) * 2);
+    font-weight: var(--fw_b);
+}
+.field {
+    margin-block: 1rem;
+}
+.field-agree {
+    margin-block: 2rem;
+}
+.field-agree label {
+    font-size: calc(var(--fs_b) * 0.8);
+}
+.inp-label {
+    font-size: 0.8rem;
+    margin-block: 0.5rem;
+}
+.inp-label > span {
+    color: var(--c_p2);
+}
+.inp-style {
+    background-color: white;
+    width: 100%;
+    padding: 0.5rem;
+    color: var(--c_n1);
+    border: 1px solid var(--c_n1);
+    border-radius: var(--g_br);
+    transition: border var(--g_td) ease,
+        color var(--g_td) ease;
+}
+.inp-style:focus {
+    color: var(--c_d2);
+    border: 1px solid var(--c_p2);
+    transition: all var(--g_td) ease;
+}
+.inp-txt-area {
+    height: 4rem;
+}
+.inp-radio:has(input[type="radio"]:checked) {
+    border: 1px solid var(--c_p2);
+    color: var(--c_d2);
+}
+.btn-submit {
+    background-color: var(--c_p2);
+    width: 100%;
+    padding: 1rem;
+    color: var(--c_d1);
+    border-radius: var(--g_br);
+    transition: background-color var(--g_td) ease;
+}
+.btn-submit:hover {
+    background-color: var(--c_p2_h);
+    transition: background-color var(--g_td) ease;
+}
+
+/* error */ 
+.e-msg {
+    opacity: 0;
+    font-size: calc(var(--fs_b) * 0.8);
+    max-height: 0;
+    margin-block: 0;
+    transition: margin-block var(--g_td) ease,
+                opacity var(--g_td) ease;
+}
+.e-msg-visible  {
+    opacity: 1;
+    color: var(--c_p3);
+    margin-block: 0.5rem;
+
+    transition: all var(--g_td) ease;
+} 
+.form-submited {
+    background-color: var(--c_n2);
+    width: fit-content;
+    max-width: 90%;
+    padding: 1rem;
+    color: var(--c_d1);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--g_br);
+
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translate(-50%,0);
+
+    transition: position var(--g_td) ease;
+}
+.form-submited p {
+    font-size: calc(var(--fs_b) * 0.8);
+}
+@media (max-width:768px) {
+    textarea {
+        height: 10rem;
+
+    }
+}

@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+    color-scheme: light;
+    --fw_n: 500;
+    --fw_b: 700;
+
+    --c_d1: white;
+    --c_d2: #0E2431;
+    --c_p1: hsl(61, 70%, 52%);
+    --c_p1_2: hsl(61, 85%, 50%);
+    --c_p2: hsl(4, 69%, 50%);
+    --c_n1: hsl(202, 86%, 94%);
+    --c_n2: hsl(203, 41%, 72%);
+    --c_n3: hsl(200, 26%, 54%);
+    --c_n4: hsl(200, 24%, 40%);
+    --c_n5: hsl(202, 55%, 16%);
+
+    --g_br: 1rem;
+    --g_p: 2rem;
+    --g_td: 0.4s;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+    font-weight: var(--fw_n);
+}
+
+/* default properties update */
+input {
+    border: none;
+    outline: none;
+    /* background-color: lightskyblue; */
+}
+
+/* main styling */
+body {
+    background-color: var(--c_n1);
+}
+.mortage-calculator {
+    background-color: white;
+    max-width: 900px;
+    margin: 4rem auto;
+    display: flex;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.part {
+    width: 50%;
+    padding: 2rem;
+}
+.part.left {
+    background-color: white;
+}
+.l-head-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.l-head-wrap .head {
+    color: var(--c_n5);
+    font-size: 1.5rem;
+}
+.l-head-wrap .clear-all {
+    color: var(--c_n3);
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* form */
+.field-name {
+    margin-top: 1.5rem;
+    margin-bottom: 0.4rem;
+    color: var(--c_n3);
+}
+.inp-wrap {
+    display: flex;
+    border: 1px solid var(--c_n3);
+    border-radius: 0.5em;
+    overflow: hidden;
+    transition: border var(--g_td) ease;
+}
+.inp-wrap p, .inp-label{
+    background-color: var(--c_n1);
+    align-content: center;
+    color: var(--c_n4);
+    padding-inline: 1rem;
+    transition: background-color var(--g_td) ease;
+}
+.inp-wrap input, .label-radio{
+    padding: 0.6rem;
+    color: var(--c_n4);
+    width: 100%;
+    transition: color var(--g_td) ease;
+}
+.inp-wrap .inp-radio {
+    accent-color: #8d8f40;
+    width: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+#mt-wrap .inp-wrap {
+    margin-bottom: 0.5rem;
+}
+.field-radio {
+    border: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-submit {
+    background-color: var(--c_p1);
+    padding: 1em;
+    margin-top: 1.5rem;
+    width: 100%;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    border-radius: 5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--g_td) ease;
+
+}
+.btn-submit:hover {
+    background-color: var(--c_p1_2);
+    transition: all var(--g_td) ease;
+}
+/* when focus */
+.inp-wrap:focus-within {
+    border: 1px solid var(--c_p1);
+    transition: all var(--g_td) ease;
+}
+.inp-wrap:focus-within .inp-label{
+    color: var(--c_n5);
+    background-color: var(--c_p1);
+    transition: all var(--g_td) ease;
+}
+.inp-radio-wrap:has(.inp-radio:checked)  {
+    background-color: #FAFAE0;
+    border: 1px solid var(--c_p1);
+    transition: all var(--g_td) ease;
+}
+/* error */
+.error-msg{
+    opacity: 0;
+    margin-block: 0em;
+    font-size: 0.8rem;
+    color: var(--c_p2);
+    height: 0;
+    transition: all var(--g_td) ease;
+}
+.inp-wrap:has(input:user-invalid) {
+    border-color: var(--c_p2);
+    transition: all var(--g_td) ease;
+}
+.inp-wrap:has(input:user-invalid) .inp-label{
+    color: white;
+    background-color: var(--c_p2);
+    transition: all var(--g_td) ease;
+}
+.inp-wrap:has(input:user-invalid) ~ .error-msg {
+    opacity: 1;
+    margin-top: 0.5em;    
+    transition: all var(--g_td) ease;
+
+}
+/* clear all */ 
+
+/* right section */
+.part.right {
+    background-color: var(--c_n5);
+    border-bottom-left-radius: 4rem;
+    color: white;
+    align-content: center;
+}
+.r-cont-wrap {
+    text-align: center;
+}
+.r-cont-wrap :where(p:nth-child(1)) {
+    color: var(--c_n1);
+    font-size: 1.5rem;
+    margin-block: 0.2em;
+}
+.r-cont-wrap :where(p:nth-child(2)) {
+    color: var(--c_n3);
+}
+.payment-wrap {
+    background-color: var(--c_d2);
+    margin-block: var(--g_p);
+    padding: var(--g_p);
+    text-align: left;
+    border-top: 3px solid var(--c_p1);
+    border-radius: 0.5rem;
+}
+.payment-wrap :where(p:nth-child(1)) {
+    color: var(--c_n3);
+    font-size: 1rem;
+    margin-block: 0.2em;
+}
+.payment-condition{
+    color: var(--c_p1);
+    font-size: clamp(2rem,3vw,3rem);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--c_n4);
+    word-break: break-all;
+}
+.payment-total{
+    color: var(--c_d1);
+    font-size: 1.5rem;
+    margin-block: 0.2em;
+    word-break: break-all;
+}
+
+@media (max-width: 640px){
+    .mortage-calculator {
+        background-color: transparent;
+        max-width: 95%;
+        flex-direction: column;
+    }
+    .part {
+        width: 100%;
+        padding: 2rem;
+    }
+}

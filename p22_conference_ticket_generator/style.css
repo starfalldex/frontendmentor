@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --ff_b: monospace;
+
+  --fs_b: 20px;
+  --fs_sm: 0.5rem;
+  --fs_md: 0.75rem;
+  --fs_lg: 1.25rem;
+  --fs_xl: 1.5rem;
+  --fs_2xl: 2rem;
+  --fs_3xl: 3rem;
+
+  --fw_l: 200;
+  --fw_n: 400;
+  --fw_m: 500;
+  --fw_b: 700;
+  --fw_h: 900;
+
+  --c_d1: hsl(0, 0%, 100%);
+  --c_d2: hsl(0, 0%, 7%);
+  --c_n1: hsl(252, 6%, 83%);
+  --c_n2: hsl(245, 15%, 58%);
+  --c_n3: hsl(245, 19%, 35%);
+  --c_n4: hsl(248, 70%, 10%);
+  --c_n5: hsl(7, 88%, 67%);
+  --c_n6: hsl(7, 71%, 60%);
+  --cg_n1: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+
+  --t_d1: 0.2s;
+  --t_d2: 0.4s;
+
+  --g_space: 1rem;
+  --g_gap: 1rem;
+  --g_padding: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff_b), sans-serif;
+  font-size: var(--fs_b);
+  font-weight: var(--fw_n);
+}
+
+body {
+  background-color: dimgray;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  line-height: 0;
+  background-color: rebeccapurple;
+}
+
+.background :where(img) {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.background :where(:nth-child(3)) {
+  top: 50%;
+  left: 70%;
+  width: 15%;
+  height: 15%;
+}
+
+.background :where(:nth-child(4)) {
+  right: 0;
+  width: 25%;
+  height: 25%;
+}
+
+.background :where(:nth-child(5)) {
+  bottom: 0;
+  width: 60%;
+  height: 60%;
+}
+
+.logo {
+  height: auto;
+  text-align: center;
+  margin-block: var(--g_space);
+}
+
+.logo img {
+  margin-inline: auto;
+  width: auto;
+  height: 100%;
+}
+
+.content {
+  text-align: center;
+
+  max-width: 680px;
+  padding: 1rem;
+  margin-inline: auto;
+  color: var(--c_d1);
+}
+
+.content>* {
+  margin-top: 2rem;
+}
+
+.description-wrapper p {
+  --_fs: var(--fs_b);
+  --_fw: var(--fw_n);
+  font-size: var(--_fs);
+  font-weight: var(--_fw);
+}
+
+.description-wrapper p:nth-child(1) {
+  --_fs: var(--fs_2xl);
+  --_fw: var(--fw_h);
+}
+
+.description-wrapper p:nth-child(2) {
+  --_fw: var(--fw_l);
+  color: var(--c_n2);
+  margin-inline: 2rem;
+}
+
+.description-wrapper span {
+  color: var(--c_n5);
+}
+
+/* form */
+form {
+  max-width: 440px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+form>*+* {
+  margin-top: var(--g_gap);
+}
+
+form>div p {
+  font-size: var(--fs_md);
+  margin-bottom: calc(var(--g_space) * 0.5);
+}
+
+input#get-avatar {
+  display: none;
+}
+
+.upload-file label {
+  height: 6rem;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  outline: 1px dashed white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.upload-file label div {
+  width: 3em;
+  aspect-ratio: 1/1;
+  background-color: var(--c_n3);
+  border-radius: 0.5em;
+  display: grid;
+  place-items: center;
+  /* outline: 0.5px solid var(--c_n1); */
+  box-shadow: 0 0 2px 0 white;
+  overflow: hidden;
+}
+
+form label img {
+  width: 100%;
+  height: 100%;
+}
+
+form label p {
+  color: var(--c_n1);
+  font-size: var(--fs_md);
+  margin-bottom: calc(var(--g_space) * 0.5);
+}
+
+.upload-file>div {
+  margin-top: calc(var(--g_space) * 0.5);
+}
+
+.info-file {
+  display: flex;
+  gap: calc(var(--g_gap) * 0.4);
+  align-items: center;
+}
+
+.info-file p {
+  margin: auto 0;
+  font-size: var(--fs_sm);
+  color: var(--c_n2);
+}
+
+form input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  padding-block: calc(var(--g_padding) * 0.3);
+  padding-inline: calc(var(--g_padding) * 0.5);
+  border: none;
+  outline: 1px solid var(--c_n2);
+  border-radius: 0.5rem;
+}
+
+form input[type="submit"] {
+  color: var(--c_d2);
+  background-color: var(--c_n6);
+}
+
+.error-msg {
+  display: none;
+  gap: calc(var(--g_gap) * 0.4);
+  align-items: center;
+  margin-top: calc(var(--g_space) * 0.5);
+}
+
+.error-msg p {
+  margin: auto 0;
+  font-size: var(--fs_sm);
+}
+
+.error-visible,
+.error-visible svg path {
+  display: flex;
+  color: var(--c_n6);
+  stroke: hsl(7, 71%, 60%);
+}
+
+
+/* after js */
+.gen-ticket {
+  max-width: 440px;
+  margin-inline: auto;
+  position: relative;
+}
+
+.ticket-img-wrap {
+  max-width: 100%;
+  line-height: 0;
+}
+
+.ticket-img-wrap img {
+  max-width: 100%;
+}
+
+.ticket-content-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: var(--g_space);
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  gap: var(--g_space);
+}
+
+/* leftside ticket */
+.content-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 100%;
+  gap: 1em;
+
+  text-align: left;
+}
+
+.content-left .left-top {
+  height: 40%;
+  display: flex;
+  gap: 0.5em;
+
+}
+
+.content-left .left-top>img {
+  height: 60%;
+}
+
+.left-top .title {
+  font-size: var(--fs_xl);
+}
+
+.left-top .address-date {
+  color: var(--c_n1);
+  font-size: var(--fs_md);
+}
+
+.content-left .left-bottom {
+  height: 40%;
+
+  display: flex;
+  gap: 0.5em;
+}
+
+.content-left .left-bottom>img {
+  border-radius: 0.5em;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.left-bottom .profile-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-detail .name {
+  font-size: var(--fs_lg);
+}
+
+.profile-detail .username {
+  color: var(--c_n2);
+}
+
+.left-bottom .profile-detail>div {
+  display: flex;
+  gap: 0.5em;
+}
+
+/* rightside ticket */
+.content-right {
+  width: 16%;
+  align-content: center;
+
+  position: relative;
+}
+
+.content-right p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+
+  color: var(--c_n2);
+}
+
+input:focus {
+  outline: 1px solid var(--c_d2);
+  box-shadow: 0 0 5px 2px var(--c_n1);
+}
+
+@media (max-width: 400px) {
+  :root {
+    --fs_md: 0.6rem;
+    --fs_lg: 1rem;
+    --fs_xl: 1.2rem;
+    --g_space: 0.5rem;
+  }
+
+  .description-wrapper p:nth-child(2) {
+    --_fw: var(--fw_l);
+    color: var(--c_n2);
+    max-width: 95%;
+    margin-inline: 0;
+  }
+
+  .left-bottom .username {
+    font-size: calc(var(--fs_md) * 1.2);
+  }
+
+  .content-right p {
+    font-size: calc(var(--fs_md) * 1.2);
+  }
+
+  .description-wrapper span {
+    word-break: break-all;
+  }
+
+}

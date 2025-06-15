@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --colorBg: hsl(225, 50%, 93%);
+  --colorPrimary: hsl(245, 60%, 40%);
+
+  --colorSurface1: hsl(0, 0%, 100%);
+  --colorElevation1: hsla(228, 100%, 0%, 0.04);
+
+  --colorBorder: rgba(0, 0, 0, 0.23);
+  --colorText: #121212;
+  --colorText2: hsla(224, 100%, 14%, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorBg: hsl(225, 50%, 7%);
+    --colorPrimary: hsl(245, 75%, 52%);
+
+    --colorSurface1: hsla(0, 0%, 100%, 0.04);
+    --colorElevation1: hsla(0, 0%, 100%, 0.02);
+
+    --colorBorder: rgba(255, 255, 255, 0.15);
+    --colorText: #ededed;
+    --colorText2: hsl(224, 23%, 55%);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: var(--colorText);
+}
+
+body {
+  background: var(--colorBg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.order-summary-card {
+  background-color: var(--colorSurface1);
+  width: 450px;
+  max-width: 90%;
+  margin: 100px auto;
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  border: 1px solid var(--colorBorder);
+  box-shadow: 0 16px 16px -16px hsla(0, 0%, 0%, 0.23), 0 2px 4px 1px hsla(0, 0%, 0%, 0.15);
+}
+
+.order-summary-card image img {
+  width: 100%;
+}
+
+.content-zone {
+  padding: 24px;
+}
+
+.text-zone {
+  text-align: center;
+}
+
+.main-text {
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.cost-plan-zone {
+  background-color: var(--colorElevation1);
+  margin-block: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 12px;
+}
+
+.cost-plan-zone .plan-cost {
+  flex-grow: 2;
+}
+
+.cost-plan-zone .change {
+  flex-grow: 1;
+  text-align: right;
+  transition: color 0.4s ease;
+  text-decoration: none;
+}
+
+.cost {
+  color: var(--colorText2);
+}
+
+.payment-zone {
+  text-align: center;
+}
+
+.proceed,
+.cancel {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.proceed {
+  width: 100%;
+  background-color: var(--colorPrimary);
+  padding: 16px;
+  color: #fff;
+  border-radius: 12px;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cancel {
+  margin: 16px;
+  color: var(--colorText2);
+  transition: color 0.4s ease;
+}
+
+@media (hover: hover) {
+  .change:hover {
+    color: var(--colorPrimary);
+    text-decoration: underline;
+  }
+
+  .proceed:hover {
+    background-color: hsla(245, 60%, 40%, 0.85);
+    box-shadow: 0 4px 8px -4px rgb(0, 0, 0), 0 1px 0 1px hsla(0, 0%, 0%, 0.23);
+  }
+
+  .cancel:hover {
+    color: var(--colorText);
+    text-decoration: underline;
+  }
+}
+
+.proceed:active {
+  background-color: hsla(245, 61%, 30%, 0.85);
+  box-shadow: 0 4px 4px -4px rgb(0, 0, 0), 0 1px 0 1px hsla(0, 0%, 0%, 0.23);
+}
+
+@media (max-width: 440px) {
+  .content-zone {
+    padding: 16px;
+  }
+
+  .cost-plan-zone {
+    padding: 16px;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --font_display: "Josefin Sans";
+  --font_body: "Inter";
+
+  --primary_c1: hsl(0, 100%, 74%);
+  --primary_c2: hsl(154, 59%, 51%);
+  --accent_c1: hsl(248, 32%, 49%);
+  --neutral_c1: hsl(249, 10%, 26%);
+  --neutral_c2: hsl(246, 25%, 77%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font_body), sans-serif;
+  font-weight: 400;
+}
+body {
+  background-color: var(--primary_c1);
+}
+.background-image {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("images/bg-intro-desktop.png");
+  background-size: cover;
+}
+.intro-component-with-sign-up-form {
+  height: 100vh;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* left side */
+.intro-component {
+  color: white;
+  width: 50%;
+}
+.intro-content {
+  width: 600px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.heading {
+  font-family: var(--font_display);
+  font-weight: bold;
+  font-size: 6rem;
+  letter-spacing: -4px;
+  word-spacing: -8px;
+  line-height: 1.1;
+}
+.description {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+/* right side */
+.sign-up-zone {
+  width: 50%;
+}
+.sign-up-content-wrapper {
+  width: 600px;
+  max-width: 90%;
+}
+
+.free-trial-button {
+  background-color: var(--accent_c1);
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 1em;
+  padding: 1em 1em;
+  border-radius: 1rem;
+  box-shadow: 0 5px 0 0 #472179;
+  cursor: pointer;
+}
+.free-trial-button:active {
+  background-color: #7c6ed4;
+  box-shadow: 0 0 0 0 #472179;
+  transition: box-shadow 0.4s ease;
+}
+.sign-up-form {
+  background-color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.1);
+}
+.input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.input-detail {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  padding: 1em 2em;
+  padding-right: 4em;
+  outline: 2px solid var(--accent_c1);
+  border-radius: 1rem;
+}
+.input-detail:focus {
+  outline: 4px solid var(--accent_c1);
+}
+
+.form-submit {
+  background-color: var(--primary_c2);
+  font-size: 1.4rem;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+
+  padding: 1em 1em;
+  border-radius: 1rem;
+  box-shadow: 0 5px 0 0 #217953;
+  cursor: pointer;
+}
+.form-submit:active {
+  background-color: #5dd8a3;
+  box-shadow: 0 0 0 0 #217953;
+  transition: box-shadow 0.4s ease;
+}
+.terms {
+  text-align: center;
+}
+.terms span {
+  font-size: 1.1rem;
+  color: var(--primary_c1);
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* error */
+.error-img {
+  display: none;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  box-shadow: -10px 0 10px 0 white;
+}
+.error-msg {
+  display: none;
+  width: 100%;
+  text-align: right;
+  color: var(--primary_c1);
+}
+/* error msg toggle class */
+.error-toggle {
+  display: block;
+}
+/* default property reset */
+.default-property-reset {
+  border: none;
+}
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 4.5rem;
+  }
+  .free-trial-button {
+    font-size: 1rem;
+  }
+  .sign-up-form {
+    gap: 0.5rem;
+  }
+  .input-detail {
+    font-size: 1rem;
+    padding: 0.5em 2em;
+    padding-right: 3em;
+  }
+  .form-submit {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+  }
+  .terms {
+    font-size: 0.8rem;
+  }
+  .terms span {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  .intro-component-with-sign-up-form {
+    margin-top: 2rem;
+    flex-direction: column;
+    text-align: center;
+    height: fit-content;
+  }
+  .intro-component {
+    width: max-content;
+    max-width: 90%;
+  }
+  .intro-content {
+    width: fit-content;
+    max-width: 100%;
+  }
+  .heading {
+    font-size: 4rem;
+  }
+  .description {
+    font-size: 1.2rem;
+  }
+  .sign-up-zone {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .sign-up-content-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 90%;
+  }
+}

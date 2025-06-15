@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Mortgage repayment calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="mortage-calculator">
+    <div class="part left">
+      <div class="l-head-wrap">
+        <p class="head">Mortgage Calculator</p>
+        <p class="clear-all" id="btn-clear-all" onclick="clearAll()">Clear All</p>
+      </div>
+
+      <form onsubmit="calcMortage(event)" novalidate>
+        <div>
+          <p class="field-name">Mortgage Amount</p>
+          <div class="inp-wrap">
+            <p class="inp-label">&pound;</p>
+            <input type="text" id="mortage-amt" name="totalAmount" value="300000" required>
+          </div>
+          <div class="error-msg">Required</div>
+        </div>
+
+        <fieldset class="field-radio">
+          <div>
+            <p class="field-name"> Mortgage Term </p>
+            <div class="inp-wrap">
+              <input type="text" name="time" value="25" required>
+              <p class="inp-label">years</p>
+            </div>
+            <div class="error-msg">Required</div>
+          </div>
+          <div>
+            <p class="field-name"> Interest Rate </p>
+            <div class="inp-wrap">
+              <input type="text" name="rate" value="5.25" required>
+              <p class="inp-label">&percnt;</p>
+            </div>
+            <div class="error-msg">Required</div>
+          </div>
+        </fieldset>
+
+        <div id="mt-wrap">
+          <p class="field-name"> Mortgage Type </p>
+          <div class="inp-wrap inp-radio-wrap">
+            <input class="inp-radio" type="radio" name="type" id="repayment" value="repayment" required>
+            <label class="label-radio" for="repayment">Repayment</label>
+          </div>
+          <div class="inp-wrap inp-radio-wrap">
+            <input class="inp-radio" type="radio" name="type" id="interest-only" value="interest" required>
+            <label class="label-radio" for="interest-only">Interest Only</label>
+          </div>
+          <div class="error-msg">Required</div>
+        </div>
+
+        <button class="btn-submit">
+          <img src="./assets/images/icon-calculator.svg" alt="">
+          <p>Calculate Repayments</p>
+        </button>
+      </form>
+    </div>
+
+    <div class="part right">
+      <div class="r-cont-wrap">
+        <img src="assets/images/illustration-empty.svg" alt="">
+        <div>
+          <p>Results Shown here</p>
+          <p>Complete the form and click “calculate repayments” to see what
+            your monthly repayments would be.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"> </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro component with sign up form</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-image bg-red"></div>
+    <div class="intro-component-with-sign-up-form">
+      <div class="intro-component">
+        <div class="intro-content">
+          <h1 class="heading">Learn to code by watching others</h1>
+          <p class="description">
+            See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is
+            invaluable.
+          </p>
+        </div>
+      </div>
+      <div class="sign-up-zone">
+        <div class="sign-up-content-wrapper">
+          <button class="free-trial-button default-property-reset" type="submit">Try it free 7 days then $20/mo. thereafter</button>
+          <div class="form-wrapper" onsubmit="submit_form(event)">
+            <form id="form1" class="sign-up-form" name="form1" novalidate>
+              <div class="input-wrapper" tabindex="0">
+                <input class="input-detail default-property-reset" onchange="data_validate(event)" type="text" name="first_name" placeholder="First Name" />
+                <img class="error-img" src="images/icon-error.svg" alt="" />
+              </div>
+              <div class="error-msg">First Name is empty or have special characters</div>
+
+              <div class="input-wrapper" tabindex="0">
+                <input class="input-detail default-property-reset" onchange="data_validate(event)" type="text" name="last_name" placeholder="Last Name" />
+                <img class="error-img" src="images/icon-error.svg" alt="" />
+              </div>
+              <div class="error-msg">Last Name is empty or have special characters</div>
+
+              <div class="input-wrapper" tabindex="0">
+                <input class="input-detail default-property-reset" onchange="data_validate(event)" type="email" placeholder="Email Address" />
+                <img class="error-img" src="images/icon-error.svg" alt="" />
+              </div>
+              <div class="error-msg">Email is empty or not Valid</div>
+
+              <div class="input-wrapper" tabindex="0">
+                <input class="input-detail default-property-reset" onchange="data_validate(event)" type="password" placeholder="Password" />
+                <img class="error-img" src="images/icon-error.svg" alt="" />
+              </div>
+              <div class="error-msg">
+                Password must be 8-30 characters long and must contain least one Uppercase, lowercase, digit, special character( @ # $ % ^ & * ! ) 
+              </div>
+
+              <button class="form-submit default-property-reset" >Claim your free trial</button>
+              <div class="terms">By clicking the button, you are agreeing to our <span> Terms and Services </span></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --primary_dark: hsl(185, 75%, 39%);
+  --primary_very_dark: hsl(229, 23%, 23%);
+  --primary_dark_greyish: hsl(227, 10%, 46%);
+  --neutral_dark: hsl(0, 0%, 90%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+body {
+  background-color: var(--primary_dark);
+}
+
+.background-look {
+  z-index: -99;
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden; */
+  position: absolute;
+}
+
+.background-look>img {
+  position: absolute;
+}
+
+.img-1 {
+  right: 50%;
+  top: -50%;
+}
+
+.img-2 {
+  left: 50%;
+  bottom: -50%;
+}
+
+.profile-card {
+  width: 350px;
+  background-color: white;
+  margin: 10rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 16px 0 hsla(0, 0%, 0%, 0.23), 0 0 0 1px hsla(0, 0%, 0%, 0.15);
+  transition: box-shadow 0.4s ease;
+
+}
+
+.profile-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.profile-zone>img {
+  border-radius: 50%;
+  height: 50%;
+  border: 5px solid white;
+  transform: translate(0, -50%);
+}
+
+.name-age {
+  display: flex;
+  gap: 8px;
+  transform: translate(0, -100%);
+}
+
+.name-age .name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary_very_dark);
+}
+
+.name-age .age {
+  color: var(--primary_dark_greyish);
+}
+
+.profile-zone .country {
+  color: var(--primary_dark_greyish);
+  width: fit-content;
+}
+
+.detail-zone {
+  display: flex;
+  justify-content: space-around;
+  padding: 24px;
+  border-top: 2px solid var(--neutral_dark);
+}
+
+.detail {
+  text-align: center;
+}
+
+.detail .numbers {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--primary_very_dark);
+}
+
+.detail .name {
+  color: var(--primary_dark_greyish);
+  opacity: 0.60;
+}
+
+@media (max-width: 375px) {
+  .profile-card {
+    max-width: 90%;
+  }
+
+  .detail-zone {
+    padding: 1rem;
+  }
+}
